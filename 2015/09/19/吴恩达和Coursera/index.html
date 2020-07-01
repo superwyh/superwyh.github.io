@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://blog.superwyh.com').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":false,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="装逼和炫耀只能填充80%的社交网络，于是上帝创造了猫。 — 查拉斯图拉·D· 玉凤  2011年 Youtube 上出现过一个爆红的视频，讲的是两名计算机科学在 Google 用各种看似科幻片里才能出现的方法在网上找猫。他们两人领导的团队从 YouTube 的视频上上随机截取1000万张静态图片，用一个由1000台计算机、16000个处理器的系统进行近一周的「学习」，学习如何从这些照片中发现猫，">
+<meta name="keywords" content="创业,吴恩达,Coursera">
+<meta property="og:type" content="article">
+<meta property="og:title" content="吴恩达和Coursera">
+<meta property="og:url" content="http://blog.superwyh.com/2015/09/19/吴恩达和Coursera/index.html">
+<meta property="og:site_name" content="Superwyh的无聊生活">
+<meta property="og:description" content="装逼和炫耀只能填充80%的社交网络，于是上帝创造了猫。 — 查拉斯图拉·D· 玉凤  2011年 Youtube 上出现过一个爆红的视频，讲的是两名计算机科学在 Google 用各种看似科幻片里才能出现的方法在网上找猫。他们两人领导的团队从 YouTube 的视频上上随机截取1000万张静态图片，用一个由1000台计算机、16000个处理器的系统进行近一周的「学习」，学习如何从这些照片中发现猫，">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-24T14:32:55.894Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="吴恩达和Coursera">
+<meta name="twitter:description" content="装逼和炫耀只能填充80%的社交网络，于是上帝创造了猫。 — 查拉斯图拉·D· 玉凤  2011年 Youtube 上出现过一个爆红的视频，讲的是两名计算机科学在 Google 用各种看似科幻片里才能出现的方法在网上找猫。他们两人领导的团队从 YouTube 的视频上上随机截取1000万张静态图片，用一个由1000台计算机、16000个处理器的系统进行近一周的「学习」，学习如何从这些照片中发现猫，">
+
+<link rel="canonical" href="http://blog.superwyh.com/2015/09/19/吴恩达和Coursera/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>吴恩达和Coursera | Superwyh的无聊生活</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Superwyh的无聊生活</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">的无聊生活</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.superwyh.com/2015/09/19/吴恩达和Coursera/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Superwyh">
+      <meta itemprop="description" content="纯个人博客，什么都不代表。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Superwyh的无聊生活">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          吴恩达和Coursera
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-09-19 22:31:18" itemprop="dateCreated datePublished" datetime="2015-09-19T22:31:18+08:00">2015-09-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-11-24 22:32:55" itemprop="dateModified" datetime="2018-11-24T22:32:55+08:00">2018-11-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/科技/" itemprop="url" rel="index">
+                    <span itemprop="name">科技</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>装逼和炫耀只能填充80%的社交网络，于是上帝创造了猫。 — 查拉斯图拉·D· 玉凤</p>
+</blockquote>
+<p>2011年 Youtube 上出现过一个爆红的视频，讲的是两名计算机科学在 Google 用各种看似科幻片里才能出现的方法在网上找猫。他们两人领导的团队从 YouTube 的视频上上随机截取1000万张静态图片，用一个由1000台计算机、16000个处理器的系统进行近一周的「学习」，学习如何从这些照片中发现猫，最终在这些照片中找到了2万个包含猫的物体，其中对猫的识别准确率达到了15.8%，这个成绩看起来十分糟糕，但相比较以往的成绩已经提高了70%以上。</p>
+<p>这两名计算机科学家一个是被称为 Google 的战神查克·诺里斯的 Jeff Dean，很多做数据库或者相关行业的可能听说过 MapReduce、BigTable、Spanner，是的，这些远远领先一个时代的数据库技术都是他搞的。以至于行业里出现了很多关于他的「谣言」，比如「编译器从不会给Jeff Dean警告的，Jeff Dean会给编译器警告的」、「所有的指针都是指向Jeff Dean的」、「在2000年末的时候，Jeff Dean 写代码的速度突然增长了40倍，原因是他把自己的键盘升级到了USB 2.0」……</p>
+<p>另外一名跟Jeff Dean一起找猫的人叫做Andrew Ng，中文名为吴恩达。</p>
+<p>1976年，吴恩达出生在了伦敦。作为医生的香港裔父亲可能从没有想到，这个看起来不起眼的小孩以后会成为人工智能和教育领域的革命者。</p>
+<p>大学前吴恩达先后在香港和新加坡度过，吴恩达和无数在海外的华裔年轻人一样十分热衷于学习。1997年拿到了美国卡内基梅陇大学的计算机科学学士学位，1998年获得了 MIT 的硕士学位，2002年拿到了加州大学伯克利分校的博士学位，之后来到了斯坦福，定居在硅谷的中心点Palo Alto，这里诞生了半个硅谷，也是全世界学术和工业的交汇点。</p>
+<p>2010年当时已经是斯坦福大学人工智能实验室主任的吴恩达加盟了 Google X 团队，就是那个在之前搞了无人驾驶汽车和Google Glass 的那个团队。</p>
+<p>吴恩达进入的团队主要任务是领导一个叫做Google Brain的项目，这个项目的根本目的就是用计算机模拟人脑的神经网络。</p>
+<p>有个共识是，脑科学是人类最难认知的科学之一，甚至人类对自己大脑的了解可能少于对外太空的认知。</p>
+<p>对于人工智能人类最早的认识是 MIT 的教授 Marvin Minsky 所提出的「头脑的社会」，意思是在大脑里每个零件都是有所分工，类似现实中的社会分工。如果计算机科学家真的要打算做出来一个大脑，就必须要模拟人类大脑的每个零部件分工，这个工作量和复杂度简直是天方夜谭。所以在长久以来人类对于人工智能的认知更多的是停留在科幻片的基础上。这也是吴恩达曾经一度放弃这个方向的原因，甚至他还曾经不停的打击自己的学生，让他们放弃人工智能这个不切实际的幻想。</p>
+<p>而然，让人工智能领域产生动摇的理论来自一名叫做Jeff Hawkins，兼具企业家和科学家背景的人。他认为人类的智慧是来源于单一的算法，理论是在人脑的发育初期，大脑的分工是不确定的。</p>
+<p>正式这个理论的出现让吴恩达眼前一亮，就有了之后的 Google Brain，他们用10万台电脑模拟了一个人类的大脑，让后让这个机器大脑通过自我的学习去寻找猫。</p>
+<p>之后这顿成果视频在 Youtube 上取得了前所未有的轰动，让内行人重新对人工智能产生了信心，也让外行人知道了什么是深度学习。对于吴恩达来说，这个视频让他获得了明星一般的关注度，以至于他的影响力甚至超过了深度学习的 先行者 Geoffrey Hinton ，要知道在过去的30年里，整个深度学习领域几乎是靠着Geoffrey Hinton一己之力在推进。</p>
+<p>2013年 Geoffrey Hinton  和一干同僚也加盟了 Google。之前轰轰烈烈的找猫行为也并没有只是成为了一个噱头，无论是 Android 上识别语音命令、无人驾驶汽车，还是在Google + 上标记图像都应用了当时的成果，更是间接影响了整个互联网行业对于深度学习的认知，一系列相关的创业公司拔地而起。</p>
+<p>但这时吴恩达来到了人生的下一个转折点 —  Coursera。</p>
+<p>2012年初，在吴恩达生日那天，和他的同事 Daphne Koller 一起开发的在线教育网站 Coursera 上线了。几个月后，一共有10万人在 Cousera 上报名参加了吴恩达的机器学习，平时吴恩达一年最多教400名学生，这个意思是，如果在传统的教育模式下，这10万人要想接受到世界上最好的机器学习教育，吴恩达需要连续上250年的课。</p>
+<p>这里，吴恩达间接探索到了在线教育的真正意义 — 让来自全世界的人都能免费获得世界上最好的高等教育资源。</p>
+<p>在之后做 Coursera 的几年时间里，吴恩达又对这个特殊领域产生了更多的思考，比如对于 Coursera 这家公司来说，重要的意义是解决高等教育延续性的问题。他在接受36kr采访的时候曾经自己提到过「我们认为高等基础教育是无法取代的，在有了线下高等教育基础后，对于那些需要继续学习或者扩展知识面的专业人士，Coursera 上的课程才是更好的选择。所以我们更多定位是在高等再教育或者研究生课程，因此在 Coursera 上的课程一般专业性的要求都相对要高。我们这样做的目的是，对于所有的像你和我这样的职业从业者，我们需要继续学习保持竞争力，但是我们没有整块的时间或者条件去大学课堂进行再教育，这个时候 Coursera 就是一个很好的选择。」</p>
+<p>2012年和2013年两年里，Coursera 都是全美最火爆的初创公司之一，2012年7月，Coursera获得600万美元A轮融资；2013年7月，Coursera完成了4300万美元B轮融资。</p>
+<p>之后的2014年，吴恩达仅保留了 Coursera 的董事长席位，加入了百度，担任首席科学家，全面负责百度研究院。这个事件的影响大到了《麻省理工科技评论》认为：「百度将领导一个创新的软件技术时代，更加了解世界。」</p>
+<p>2013年百度成立了深度学习实验室（IDL），并且在吴恩达之前先后招募了Facebook资深科学家徐伟，异构计算专家、GPU海量解析专家吴韧，千人计划国家特聘专家余凯等。李彦宏也曾经多次表示过希望IDL 能够成为像PARC和贝尔实验室一样的顶级科研机构。吴恩达的到来毫无疑问是拼图的重要一环。</p>
+<p>吴恩达在百度实际执行的项目被称为「百度大脑」，在产品出来前我们并不清楚和之前的 Google Brain 差距在哪里，但是我们有理由相信吴恩达的决定。</p>
+<p>最后，对于一个真正改变世界的吴恩达来说，他的人生追求在哪里？36kr 在对吴恩达采访时，吴恩达间接回答了这个问题：「I really have to take off at 6 o ‘clock. I have been late for home everyday and I promise my wife will be home early today.」</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/创业/" rel="tag"># 创业</a>
+              <a href="/tags/吴恩达/" rel="tag"># 吴恩达</a>
+              <a href="/tags/Coursera/" rel="tag"># Coursera</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2015/06/16/从女足世界杯看女足收入为何如此低/" rel="prev" title="从女足世界杯看女足收入为何如此低">
+      <i class="fa fa-chevron-left"></i> 从女足世界杯看女足收入为何如此低
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2015/11/26/《我的少女时代》和青春片/" rel="next" title="《我的少女时代》和青春片">
+      《我的少女时代》和青春片 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Superwyh</p>
+  <div class="site-description" itemprop="description">纯个人博客，什么都不代表。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">92</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">146</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Superwyh</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">194k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:57</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

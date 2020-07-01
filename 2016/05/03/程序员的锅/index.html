@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://blog.superwyh.com').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":false,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="昨天我少有睡前没有看书，只是因为上床前扫了一眼 QQ 的一个技术群，发现里面一堆程序员吵的热火朝天，聊天记录比网络小说好看的多，然而这场刀光剑影的辩论命题就是「百度的程序员有没有错」。1. 先来思考最关键的问题，为什么百度作恶的锅会有人给程序员挂上？ 魏则西去世这个事件里，最直接的责任显然是医院，其次是百度公司，两者谁无法脱掉干系，但作为百度员工来说，作为只是拿工资干活的程序员来说，好像并没有什么">
+<meta name="keywords" content="程序员,程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="程序员的锅">
+<meta property="og:url" content="http://blog.superwyh.com/2016/05/03/程序员的锅/index.html">
+<meta property="og:site_name" content="Superwyh的无聊生活">
+<meta property="og:description" content="昨天我少有睡前没有看书，只是因为上床前扫了一眼 QQ 的一个技术群，发现里面一堆程序员吵的热火朝天，聊天记录比网络小说好看的多，然而这场刀光剑影的辩论命题就是「百度的程序员有没有错」。1. 先来思考最关键的问题，为什么百度作恶的锅会有人给程序员挂上？ 魏则西去世这个事件里，最直接的责任显然是医院，其次是百度公司，两者谁无法脱掉干系，但作为百度员工来说，作为只是拿工资干活的程序员来说，好像并没有什么">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-05-17T13:52:55.981Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="程序员的锅">
+<meta name="twitter:description" content="昨天我少有睡前没有看书，只是因为上床前扫了一眼 QQ 的一个技术群，发现里面一堆程序员吵的热火朝天，聊天记录比网络小说好看的多，然而这场刀光剑影的辩论命题就是「百度的程序员有没有错」。1. 先来思考最关键的问题，为什么百度作恶的锅会有人给程序员挂上？ 魏则西去世这个事件里，最直接的责任显然是医院，其次是百度公司，两者谁无法脱掉干系，但作为百度员工来说，作为只是拿工资干活的程序员来说，好像并没有什么">
+
+<link rel="canonical" href="http://blog.superwyh.com/2016/05/03/程序员的锅/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>程序员的锅 | Superwyh的无聊生活</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Superwyh的无聊生活</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">的无聊生活</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.superwyh.com/2016/05/03/程序员的锅/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Superwyh">
+      <meta itemprop="description" content="纯个人博客，什么都不代表。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Superwyh的无聊生活">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          程序员的锅
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-05-03 21:52:05" itemprop="dateCreated datePublished" datetime="2016-05-03T21:52:05+08:00">2016-05-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-17 21:52:55" itemprop="dateModified" datetime="2020-05-17T21:52:55+08:00">2020-05-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/评论/" itemprop="url" rel="index">
+                    <span itemprop="name">评论</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>昨天我少有睡前没有看书，只是因为上床前扫了一眼 QQ 的一个技术群，发现里面一堆程序员吵的热火朝天，聊天记录比网络小说好看的多，然而这场刀光剑影的辩论命题就是「百度的程序员有没有错」。<br>1.</p>
+<p>先来思考最关键的问题，为什么百度作恶的锅会有人给程序员挂上？</p>
+<p>魏则西去世这个事件里，最直接的责任显然是医院，其次是百度公司，两者谁无法脱掉干系，但作为百度员工来说，作为只是拿工资干活的程序员来说，好像并没有什么太直接的关系，或者说怎么轮也轮不到他们，要轮也要先轮百度的管理层，那又究竟为什么会有那么多人指责百度的程序员？</p>
+<p>因为无可奈何。</p>
+<p>无论医院还是百度猖狂至今的问题，都是监管问题，这话点到为止，大家都明白什么意思，我们期望有一个好的结果，但我猜最终很可能也只是一声叹息，至少在百度本身的问题上，能有本质变化的可能性并不大。在这个前提下，在这个利益链里，好像程序员们成了唯一能够动摇的一环，毕竟他们是提供技术源头的人，如果这一环出现了动摇，那确实或者或少定然会影响到百度和百度所做的事情。</p>
+<p>有人说这只是捡软柿子捏而已，但在别的捏不动甚至无法捏的情况下，好像这也是其中无可奈何的办法。所以指责的原因虽然牵强，但绝对不是完全没有道理。</p>
+<p>2.</p>
+<p>那百度的程序员究竟有没有错？</p>
+<p>百度确实做了很多的恶，但不代表百度的所有业务都是错误的，百度在发展过程中做过很多优秀的产品，像百度贴吧，我们在说百度卖血友病贴吧时无良时，其实也是在说曾经百度确实提供过一个优秀的平台给患者进行交流。</p>
+<p>这些背后依然是优秀的程序员来驱动的，很难定义每行代码背后的是非，并不是每个程序员进百度就是为了吃人血馒头。</p>
+<p>我支持干死百度，但不支持干死百度的程序员们。</p>
+<p>3.</p>
+<p>真的让百度程序员来背这个事情的黑锅显然是不合适的，一个写代码的没道理替做决策承担错误，但有一点也要明白，技术是无罪的并不代表技术都是道德的。</p>
+<p>有人说当年纳粹的罪也没有让所有底层士兵去承担，先不论强制和志愿的差异，只是说纳粹士兵承受的道德压力和舆论指责就已然不少。这个事情里让程序员背锅是不对的，写代码不违法，但也请某些程序员们明白自己做的事情并不光荣，既然已经知道自己的技术用在坏事上，就或多或少有点羞耻心。就像做菜刀的本身没有任何问题，但是当你明确知道有人买你的菜刀就是为了杀人，那就是另外一个情况。</p>
+<p>良性的社会法律并不是一切，道德也很重要。</p>
+<p>4.</p>
+<p>在指责百度的程序员这个事情里，说程序员们没有错的前提是要先定义这个「错」指代的是什么，我相信每个人说这句话的时候标准都不同，有人指代的是「法律」，有人指代的是「正义」，有人指代的是「主体责任」，还有人的标准纯粹是「道德」，在我这里，关于百度程序员们的结论就是：不是责任人，没有法律问题，但有不排除部分人有道德问题。</p>
+<p>从个体角度来说，你很难期待每个人都能很理性客观的看待事情，所以真的有人跳着高要干死百度的程序员，你根本无从解释也无法阻止，所以只是一个善良的建议，哪怕只是爱惜自己的羽毛，也最好远离百度。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/程序员/" rel="tag"># 程序员</a>
+              <a href="/tags/程序/" rel="tag"># 程序</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/05/03/当我们讨厌百度时我们在讨厌什么/" rel="prev" title="当我们讨厌百度时我们在讨厌什么">
+      <i class="fa fa-chevron-left"></i> 当我们讨厌百度时我们在讨厌什么
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2016/06/21/一部美漫是如何制作的？/" rel="next" title="一部美漫是如何制作的？">
+      一部美漫是如何制作的？ <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Superwyh</p>
+  <div class="site-description" itemprop="description">纯个人博客，什么都不代表。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">92</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">146</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Superwyh</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">194k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:57</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

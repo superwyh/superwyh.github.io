@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://blog.superwyh.com').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":false,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="“我想说，你真是一个很厉害的人啊。”我对面的这个陌生人说。　　确切说，我真的不知道他是从哪里冒出来的。好像上一秒我还在吃我的热狗，大脑在思考这个该死的厨师又放了太多的黄芥末。这一秒就到了我的面前，在我想要感慨前他却先说了话。　　在这么一个阳光和空气正好的下午，这实在说不上是让人开心的场景。如果没有他在这里我的视线还是可以一如既往的看到坐在门边身穿裹身短裙的女士。　　“你是？”我咽下了嗓子眼里的热狗">
+<meta name="keywords" content="小说,程序,脑洞">
+<meta property="og:type" content="article">
+<meta property="og:title" content="程序">
+<meta property="og:url" content="http://blog.superwyh.com/2012/10/06/程序/index.html">
+<meta property="og:site_name" content="Superwyh的无聊生活">
+<meta property="og:description" content="“我想说，你真是一个很厉害的人啊。”我对面的这个陌生人说。　　确切说，我真的不知道他是从哪里冒出来的。好像上一秒我还在吃我的热狗，大脑在思考这个该死的厨师又放了太多的黄芥末。这一秒就到了我的面前，在我想要感慨前他却先说了话。　　在这么一个阳光和空气正好的下午，这实在说不上是让人开心的场景。如果没有他在这里我的视线还是可以一如既往的看到坐在门边身穿裹身短裙的女士。　　“你是？”我咽下了嗓子眼里的热狗">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-06T09:42:01.108Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="程序">
+<meta name="twitter:description" content="“我想说，你真是一个很厉害的人啊。”我对面的这个陌生人说。　　确切说，我真的不知道他是从哪里冒出来的。好像上一秒我还在吃我的热狗，大脑在思考这个该死的厨师又放了太多的黄芥末。这一秒就到了我的面前，在我想要感慨前他却先说了话。　　在这么一个阳光和空气正好的下午，这实在说不上是让人开心的场景。如果没有他在这里我的视线还是可以一如既往的看到坐在门边身穿裹身短裙的女士。　　“你是？”我咽下了嗓子眼里的热狗">
+
+<link rel="canonical" href="http://blog.superwyh.com/2012/10/06/程序/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>程序 | Superwyh的无聊生活</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Superwyh的无聊生活</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">的无聊生活</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.superwyh.com/2012/10/06/程序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Superwyh">
+      <meta itemprop="description" content="纯个人博客，什么都不代表。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Superwyh的无聊生活">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          程序
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-10-06 17:41:27" itemprop="dateCreated datePublished" datetime="2012-10-06T17:41:27+08:00">2012-10-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-06 17:42:01" itemprop="dateModified" datetime="2019-10-06T17:42:01+08:00">2019-10-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小说/" itemprop="url" rel="index">
+                    <span itemprop="name">小说</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>2.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>“我想说，你真是一个很厉害的人啊。”我对面的这个陌生人说。<br>　　<br>确切说，我真的不知道他是从哪里冒出来的。好像上一秒我还在吃我的热狗，大脑在思考这个该死的厨师又放了太多的黄芥末。这一秒就到了我的面前，在我想要感慨前他却先说了话。<br>　　<br>在这么一个阳光和空气正好的下午，这实在说不上是让人开心的场景。如果没有他在这里我的视线还是可以一如既往的看到坐在门边身穿裹身短裙的女士。<br>　　<br>“你是？”我咽下了嗓子眼里的热狗后质问道，味道真的不是很好，要不是赶着之后上课，我肯定开车去找别的能够配得上好天气的饭店了。<br>　　<br>“我？你不知道吗？我想你应该能想象出来吧，我是说，按照我的调查结果来说，你已经知道了。”他极其自信的在看着我，我有点犹豫。<br>　　<br>“我不太懂你的意思，你是说我认识你？”<br>　　<br>“是啊。不止，我想你也能猜到我来这里的原因。”<br>　　<br>“抱歉，我真的……”我想说我不知道，但猛然一个念头跃上我的脑海。最近我一直有个奇怪的感觉，好像世界有点不一样的地方。一直有种说不出的违和感，不知道是从什么时候开始，总之这种怪异的想法萦绕在我的脑海中无法散去。 三周前我曾经和女友讨论过这个问题，但是只是换来她一脸狐疑，我解释了半天后她也只是回敬了我一句“神经病”。<br>　　<br>“你是说，你知道我想的是什么？”我追问道。<br>　　<br>“可以这么说。”<br>　　<br>“所以你知道我对于这个世界感到一些疑惑和猜忌？我有些怀疑，我觉得这个世界好像……好像有点……”<br>　　<br>“有点不真实？”他接话道。<br>　　<br>“是的，就是这样的。好像是一个虚拟的世界，好像我只是生活在电脑里的一段代码一样……难道？”我停下了话语，直勾勾的看着他，对面的那个诡笑的表情好像已经告诉了我结果。<br>　　<br>“对的，我想你猜对了。”<br>　　<br>我先是一阵紧张，然后又松了一口气，至少我不用赶着上课了。反正世界已经这样，我想应该问问具体怎么回事，还有这个奇怪的人为什么要找到我。 现在我的感觉就好似一个失明已久的幼童猛然间重获光明，看着熙熙攘攘的街道却也陌生的找不出个因果源头。<br>　　<br>“你不用问了。”他说道，我想他一定知道我想的是什么。 “我陪你转转吧。”</p>
+<p>“好啊。”我吃了最后两口热狗后将桌面收拾干净，他也只是在一旁静静的看着，也是这时我才真的有时间思考一下究竟发生了什么。首先他不知道从哪里知道的我，然后又确定我对这个世界有某种疑问，之后用了某种匪夷所思的魔法让我在第一时间就相信了他那个荒诞的说辞。</p>
+<p>“你觉得很荒诞吗？”他问到。</p>
+<p>“所以，你真的知道我一切所想吗？即便我在内心对你进行歇斯底里的咒骂？”我笑了笑。</p>
+<p>“是的，但是我确定你不会。你远远比自己想象中的温柔的多。”</p>
+<p>“是吗？哈哈。”</p>
+<p>我们两个随便聊了几句后走在学校边上街道上，隐约能闻到街角刚出炉的比萨和学生手中新鲜咖啡的味道，混着说不出缘由的花香，这才是春天。只是这个时间全是干着上课的学生们，显得我们突然很不合群。</p>
+<p>“你说说你的故事吧。”</p>
+<p>“你不是什么都知道吗？为什么还要我说。”我对他的请求表示质疑。</p>
+<p>“想听听故事而已，不可以吗？”</p>
+<p>“好啊。我从小其实就觉得这个世界对我很不公平。我记得小学时，第一天上学，点到表上就没有我的名字，当时我也不知道这个事情很重要。于是我成了班级里的一坨空气，一直到发教材的时候才发现忘记了我，之后这个噩梦重复了整个小学，所有老师都会忘记判我的作业，所有老师永远不会叫我回答问题，学校的一切福利都和我没有关系。我有的时候真的怀疑自己是不是存在。”</p>
+<p>“真是倒霉的人生啊，我还记得之后的事情吗？是变好了还是更加糟糕了吗？”</p>
+<p>“当然是更加糟糕了，最糟糕的是我高中时。当时我刚谈了初恋女友，我们是同班同学，我暗恋了她很久后终于鼓起勇气表白，结果还真的出乎意料，居然都没有犹豫就答应了。在一起两三周后有个小长假，我们大概四五天没有见到，再次在学校遇到的时候发现她牵着另外一个男人有说有笑。你当时就气急了，上去质问，结果她告诉我从来没有答应过我什么，而且根本不认识我。”</p>
+<p>“哈哈，真是你运气也实在太差了。”</p>
+<p>“是的，哪怕大学和工作以后也是。老师会平白无故的丢掉了我的考试卷，我发给老板的邮件会莫名其妙消失。总之好像全世界都在和我对着干。”</p>
+<p>“那你究竟是什么时候开始怀疑这个世界的呢？”</p>
+<p>“就是前几天吧。有一天我突然觉得有些地方不对头，那天和今天一样天气很好，我就这么一个人走在街上突然发现……”</p>
+<p>“发现什么？”</p>
+<p>“这个世界卡住了。”</p>
+<p>“卡住了？”</p>
+<p>“嗯，发生了某种卡顿。只有我像正常人一样流畅的行走着，其余的路人都像被施了魔法一般拖着笨重的身躯缓慢移动。那种感觉好像玩游戏的时候卡住了一般。真的很奇怪的场景。尤其是在我第一时间思考到这里时发现这种不和谐的卡顿更加严重。现在回想起来真的如噩梦一般。”</p>
+<p>“然后呢？”</p>
+<p>“你看，我当时就站在那里。”我指给他，就在离我们现在不远的街道边，那里路边的草坪上开了一片黄色的小花，显得格外清晰。</p>
+<p>“就在那里我觉得世界被卡住了，当时我也有点头晕就坐在了边上的草坪上。我闭着眼睛思考了一会后再次睁开眼睛，发现世界归于平静，反而坐在草坪上的我成了被人注视的焦点。”</p>
+<p>“太有趣了。”</p>
+<p>“是啊，那么现在你可以告诉我到底发生了什么吧？我花了这么久的时间跟你聊我的惨痛遭遇可不是要你的可怜。”<br>　　<br>“好的，我告诉你事情的真想。你想的完全正确，这个世界就是虚拟的，你也是虚拟的，我之所以找到你是因为……是因为……你有点猜错了，你并不是单纯的一段代码。你只是这个程序里的Bug。”</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/小说/" rel="tag"># 小说</a>
+              <a href="/tags/程序/" rel="tag"># 程序</a>
+              <a href="/tags/脑洞/" rel="tag"># 脑洞</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2012/10/06/室友/" rel="prev" title="室友">
+      <i class="fa fa-chevron-left"></i> 室友
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2012/10/06/后窗/" rel="next" title="后窗">
+      后窗 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Superwyh</p>
+  <div class="site-description" itemprop="description">纯个人博客，什么都不代表。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">92</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">146</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Superwyh</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">194k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:57</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
