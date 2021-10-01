@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://blog.superwyh.com').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":false,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="Kiip 的模式其实非常简单，大概就是用户达到一定积分后，会在不打断游戏体验的情况下给一个广告条，告诉你你达到某种成绩后留下一个邮箱地址就可以换取一个实际的奖励。 对于广告主来说展示的其实一个长期效果，会在游戏里不停的刷存在感，对于游戏来说也可以获得广告收益，对于玩家来说玩游戏还能有奖励爽死了。听着都不错是吧，但是这个模式有一个巨大的问题，可能不做过这个行业的人体会不到。 这个问题在于，在移动广告">
+<meta name="keywords" content="游戏,Kiip,创业,移动广告,Simnect">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为什么Kiip模式行不通">
+<meta property="og:url" content="http://blog.superwyh.com/2014/05/13/为什么Kiip模式行不通/index.html">
+<meta property="og:site_name" content="Superwyh的无聊生活">
+<meta property="og:description" content="Kiip 的模式其实非常简单，大概就是用户达到一定积分后，会在不打断游戏体验的情况下给一个广告条，告诉你你达到某种成绩后留下一个邮箱地址就可以换取一个实际的奖励。 对于广告主来说展示的其实一个长期效果，会在游戏里不停的刷存在感，对于游戏来说也可以获得广告收益，对于玩家来说玩游戏还能有奖励爽死了。听着都不错是吧，但是这个模式有一个巨大的问题，可能不做过这个行业的人体会不到。 这个问题在于，在移动广告">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-07T14:04:17.388Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="为什么Kiip模式行不通">
+<meta name="twitter:description" content="Kiip 的模式其实非常简单，大概就是用户达到一定积分后，会在不打断游戏体验的情况下给一个广告条，告诉你你达到某种成绩后留下一个邮箱地址就可以换取一个实际的奖励。 对于广告主来说展示的其实一个长期效果，会在游戏里不停的刷存在感，对于游戏来说也可以获得广告收益，对于玩家来说玩游戏还能有奖励爽死了。听着都不错是吧，但是这个模式有一个巨大的问题，可能不做过这个行业的人体会不到。 这个问题在于，在移动广告">
+
+<link rel="canonical" href="http://blog.superwyh.com/2014/05/13/为什么Kiip模式行不通/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>为什么Kiip模式行不通 | Superwyh的无聊生活</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Superwyh的无聊生活</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">的无聊生活</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.superwyh.com/2014/05/13/为什么Kiip模式行不通/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Superwyh">
+      <meta itemprop="description" content="纯个人博客，什么都不代表。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Superwyh的无聊生活">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          为什么Kiip模式行不通
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-05-13 23:47:33" itemprop="dateCreated datePublished" datetime="2014-05-13T23:47:33+08:00">2014-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-10-07 22:04:17" itemprop="dateModified" datetime="2018-10-07T22:04:17+08:00">2018-10-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/科技/" itemprop="url" rel="index">
+                    <span itemprop="name">科技</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Kiip 的模式其实非常简单，大概就是用户达到一定积分后，会在不打断游戏体验的情况下给一个广告条，告诉你你达到某种成绩后留下一个邮箱地址就可以换取一个实际的奖励。</p>
+<p>对于广告主来说展示的其实一个长期效果，会在游戏里不停的刷存在感，对于游戏来说也可以获得广告收益，对于玩家来说玩游戏还能有奖励爽死了。听着都不错是吧，但是这个模式有一个巨大的问题，可能不做过这个行业的人体会不到。</p>
+<p>这个问题在于，在移动广告端，真的愿意掏钱的不是那些商家，而是游戏公司。你们回头去看手机上的广告，其实都是处于一种「内耗」的状态，无论一般的展示性广告到积分强广告，真正的付费方都是拿了不知道多少钱的 App 或者巨巨有钱的游戏公司，真没什么商家去投放。这里的原因是什么？</p>
+<p>和传统的 Web 广告来说其实所有的 App 内置广告都要面临的问题是点了以后跳到哪，在中国多数的商家其实都是没有想明白这个问题，所以其实也就没什么直接投入。这个时候你要去和这些商家去谈就面临一个巨大的问题，他们没有做过的事情，让他们怎么相信你能带来的效益？更别提其实他们这种广告的单次付出成本要远远高于传统的展示类广告，所以最好的结果是商家给你一些本来就要免费送出去的产品让你顺便发一下而已。</p>
+<p>但这还不是更复杂的问题，更恶心的问题是，哪怕真的有商家愿意尝试，你会发现在广告效益的定价上出现了障碍。一款跑酷类游戏和另外一款卡牌游戏究竟要怎么核定什么时候出现广告，如果一款化妆品的5元优惠卷，同时要出现在这两款游戏里，要怎么确定两款游戏出现的点相对而言公平一些。对于商家其实可能不太在意，但对于游戏的开发者思考的其实比较多。</p>
+<p>这种模式其实很早就有国内公司做过尝试，疯狂猜图的公司做过一款叫疯狂猎鸟的游戏里面就做过这类广告。但效果其实并不好，遇到的障碍大家很难说清楚。</p>
+<p>相比较而言其实积分墙反而是一种更加科学的模式，让生态链中的游戏公司和游戏公司做交易，避免引入那些局外人，更好推广，同时更容易赚钱。</p>
+<p>最后移动广告投放在中国其实是一个非常尴尬的问题，中国真正赚钱的游戏都是没有广告的。你们什么时候见过重付费游戏上还插了一堆广告的。相比较而言他们更害怕的是插入你的 SDK 以后虽然多赚了一点钱，但是大大增加了崩溃的不可控成本，这也是问题。</p>
+<p>结果是这种模式在国内很难很难推广，不只是玩家是不是能接受，而是掏钱的和拿钱的其实都不太乐意。而且实际上按照我对于 Kiip 经营状况的了解，他们在美国也遇到了同样的问题。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/游戏/" rel="tag"># 游戏</a>
+              <a href="/tags/Kiip/" rel="tag"># Kiip</a>
+              <a href="/tags/创业/" rel="tag"># 创业</a>
+              <a href="/tags/移动广告/" rel="tag"># 移动广告</a>
+              <a href="/tags/Simnect/" rel="tag"># Simnect</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2014/05/04/向阳处的她/" rel="prev" title="向阳处的她">
+      <i class="fa fa-chevron-left"></i> 向阳处的她
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2014/10/28/闷瓜爱游戏上线了/" rel="next" title="闷瓜爱游戏上线了">
+      闷瓜爱游戏上线了 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Superwyh</p>
+  <div class="site-description" itemprop="description">纯个人博客，什么都不代表。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">154</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Superwyh</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">196k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:58</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

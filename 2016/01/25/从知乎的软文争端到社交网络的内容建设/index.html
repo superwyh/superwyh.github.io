@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://blog.superwyh.com').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":false,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="我知乎有三个帐号，一个是实名帐号；二个是出于对知乎匿名系统的不信任，专门回答匿名问题的帐号，偶尔也实名回答一些感情问题；三个是我专门回答技术问题的小号，三个帐号加起来也有接近10万粉丝，同时我也是知乎最早的一批用户之一。如果上知乎早的人应该也知道我不幸曾经也挑起过一些争议事件，历史就不回顾，只说一下这次知乎的软文事件。 这次的故事背景大抵是一名叫做「芝士就是力量」的用户跳出来指责一些大 V 发大量">
+<meta name="keywords" content="知乎,软文,盈利,社交网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从知乎的软文争端到社交网络的内容建设">
+<meta property="og:url" content="http://blog.superwyh.com/2016/01/25/从知乎的软文争端到社交网络的内容建设/index.html">
+<meta property="og:site_name" content="Superwyh的无聊生活">
+<meta property="og:description" content="我知乎有三个帐号，一个是实名帐号；二个是出于对知乎匿名系统的不信任，专门回答匿名问题的帐号，偶尔也实名回答一些感情问题；三个是我专门回答技术问题的小号，三个帐号加起来也有接近10万粉丝，同时我也是知乎最早的一批用户之一。如果上知乎早的人应该也知道我不幸曾经也挑起过一些争议事件，历史就不回顾，只说一下这次知乎的软文事件。 这次的故事背景大抵是一名叫做「芝士就是力量」的用户跳出来指责一些大 V 发大量">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-11-24T13:17:44.502Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从知乎的软文争端到社交网络的内容建设">
+<meta name="twitter:description" content="我知乎有三个帐号，一个是实名帐号；二个是出于对知乎匿名系统的不信任，专门回答匿名问题的帐号，偶尔也实名回答一些感情问题；三个是我专门回答技术问题的小号，三个帐号加起来也有接近10万粉丝，同时我也是知乎最早的一批用户之一。如果上知乎早的人应该也知道我不幸曾经也挑起过一些争议事件，历史就不回顾，只说一下这次知乎的软文事件。 这次的故事背景大抵是一名叫做「芝士就是力量」的用户跳出来指责一些大 V 发大量">
+
+<link rel="canonical" href="http://blog.superwyh.com/2016/01/25/从知乎的软文争端到社交网络的内容建设/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>从知乎的软文争端到社交网络的内容建设 | Superwyh的无聊生活</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Superwyh的无聊生活</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">的无聊生活</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.superwyh.com/2016/01/25/从知乎的软文争端到社交网络的内容建设/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Superwyh">
+      <meta itemprop="description" content="纯个人博客，什么都不代表。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Superwyh的无聊生活">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          从知乎的软文争端到社交网络的内容建设
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-01-25 20:59:16" itemprop="dateCreated datePublished" datetime="2016-01-25T20:59:16+08:00">2016-01-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-11-24 21:17:44" itemprop="dateModified" datetime="2018-11-24T21:17:44+08:00">2018-11-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/评论/" itemprop="url" rel="index">
+                    <span itemprop="name">评论</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>2.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>我知乎有三个帐号，一个是实名帐号；二个是出于对知乎匿名系统的不信任，专门回答匿名问题的帐号，偶尔也实名回答一些感情问题；三个是我专门回答技术问题的小号，三个帐号加起来也有接近10万粉丝，同时我也是知乎最早的一批用户之一。如果上知乎早的人应该也知道我不幸曾经也挑起过一些争议事件，历史就不回顾，只说一下这次知乎的软文事件。</p>
+<p>这次的故事背景大抵是一名叫做「芝士就是力量」的用户跳出来指责一些大 V 发大量软文推广某家公司的产品，之后又有路人曝出这个「芝士就是力量」的行为本身也是营销，来来回回经历了好几次反转。这里谁说真话谁说假话不表，不是当事人不清楚具体情况，只是说说发软文这个事情。</p>
+<p>-</p>
+<p>我曾经在四个网站上写过大量的内容，分别是榕树下、虎扑、豆瓣，和现在的知乎，但基本上这两年就很少更新任何一个网站，主要原因就是，不敢写。</p>
+<p>知乎尤其严重，如果你经常在知乎上写答案就能知道，你无论回答什么用户都有人骂，回答感情问题有人骂、回答做饭问题有人骂、回答电影问题有人骂，甚至回答技术问题居然都有人骂，有的时候我也会觉得好笑，我工作这些年做了不少游戏行业的事情，这种情况下我回答游戏行业的回答时经常被一些游戏玩家指责不了解这个行业 。我认识很多所谓的知乎大 V 都是因为人言可畏而不再写内容，这绝对不是个例，而是普遍现象，如果只是为了爱好，在知乎上回答慢慢的变成了一种精神负担，只要一个答案发出去就要做好被骂个狗血淋头的心理准备，我遇到过最夸张的一次是我回答过一个鄙视盗版的答案结果两年后都有人私信追着骂。</p>
+<p>这种情况几乎是一个社交媒体做大以后必然，网站不能用最高道德标准作为普世价值观要求别人，在用户增加的大前提下垃圾内容也一定会有数量级的产出。人红被人骂是社交网络的铁律，甚至可以和人一定会死亡一起列入生物圈的客观规律。</p>
+<p>为了解决这个问题，知乎站方也想过一些手段，比如增加友善值的设置，当然这个愚蠢的设计反而又逼走了一批知乎的内容贡献者。事实上我在几年前就强调过，这种事后给你戴帽子的不友善处理绝对解决不了本源，<strong>最根本的问题是在于用户的参与成本太低</strong>，每个人都可以肆无忌惮的发表自己的观点。当用户没有对自己 ID 的价值认同时，所有事后处罚都是显得苍白无力，但知乎作为一个商业公司又不能设置太高的参与门槛，尤其是野心极大的知乎管理团队更不允许这个情况出现。</p>
+<p>在这种让人不爽的状况下，我不敢说100%，但至少有八成的知乎内容核心产出者都是为了利益，直接或者间接的利益。甚至不只是知乎，一切社交媒体都是如此，从 Twitter 到微博，从 Facebook 到 Instagram，你要是熟悉这个圈子就会知道，社交网络基本就是靠利益链撑起来的全部内容。</p>
+<p>社交网络上最显著的间接利益是「名气」，微博上很多人从草根一跃成为知名大 V，知乎上也有很多人因为答案写的好被出版社邀出书，或者找到想要的工作。还有些人他们不追求这么高大上的内容，或者说他们也很难做到，只是想赚钱零花钱，所以接了一些软文。</p>
+<p>知乎本身就是一个纯粹的商业网站，网站上诺大的广告立在那里，站方也做过知乎圆桌这种引导用户言论内容的广告，但从来没有用户上升到这次事件一样的情况去批判知乎站方。用户能接受这些是因为他们理解知乎网站运作是有成本的，觉得自己免费看了内容看一点广告是可以接受的，但用户忘记了别的人维护自己的帐号也是有成本的，多数用户把大 V 们都想成了不食油盐的圣人而已，但事实上不是，他们也要生活，也要改善生活。不开玩笑，要是知乎站方明确说禁止软文出现，发软文封号这种，知乎绝大多数深受爱戴的用户这辈子都很难再看到他们更新，这是客观事实，是一条你不得不接受的利益链。</p>
+<p>用户希望在社交媒体上看不到软文只是纯朴的乡愿，而且多数用户对于用户和软文没有太多直观的概念，像其实很多人都不知道 Instagram 基本上是个广告窝。</p>
+<p>说句不好听的，没有钱赚谁他妈愿意花几个小时写个答案还挨顿骂？</p>
+<p>-</p>
+<p>我曾经接过几个软文，基本都是朋友直接来找，然后产品我自己也比较熟悉的，不熟的一律不理。如果说知乎真的有软文的问题，不如说接没良心的软文太多。</p>
+<p>知乎上有两家曾经被黑的不忍直视的公司，分别为云视链和游侠汽车，稍微了解点情况的人都清楚这两家基本上就是纯靠一路骗做到现在，知乎上明眼人多，这两家就被实实在在打成了马蜂窝。但这两家公司在被黑的最惨的时候都有写大 V 跳出来支持他们，甚至有些你看不出来有任何直接利益关系的，不是公司员工也不是投资人，这些人图什么？收钱了呗。</p>
+<p>你觉得奇葩？</p>
+<p>更奇葩的还很多，曾经有知名大 V 黑了某公司，然后转身去找这个公司要钱，说给钱我就删帖，甚至还有过有组织有纪律的做类似事情的团队，知乎站方也处理过几次事件，毕竟往大里说这是违法。</p>
+<p><strong>不收黑钱、不做违心事是基本道德问题</strong>，和社交网络无关，和平台无关。</p>
+<p>-</p>
+<p>知乎现阶段除了暴民横行这个不好解决的问题外，最大的麻烦就是花了几年时间建立的价值体系已经基本崩塌。</p>
+<p>早期知乎基本都是牛人多粉，只有输出有水平的内容才能赚到粉丝，<strong>让牛逼的人获得对等的影响和收益也是知乎长时间以来最大的优势</strong>。现在呢？</p>
+<p>第一次价值体系的崩塌是写手横行。在13年以后知乎冒出来大量的用户在知乎上写各种奇葩的故事，有父母双亡勤奋读书的、有和人谈恋爱谈到惊天动地的、有和明星谈笑风生的，陆续有很多人被扒过，基本都是编故事而已，这些人就靠一个看起来假的不行的故事骗到了大量粉丝，然后再找机会获得利益，包括前一段时间骗捐款的童瑶就是其中之一。当然除了小打小闹的个体行为外，更重要的是一大批以前微博上的写手号也加入其中，甚至有公司化运作。</p>
+<p>第二次价值体系崩塌是靠美女骗粉的越来越多。在知乎上已经几乎是铁律，只要一个看起来头像是美女的用户，写个回答，随便曝张照片就能换来上千粉丝。我前不久还尝试过一次，经朋友同意用她的照片和帐号回答了一个晒腿的问题和一个购物的问题，一周涨了3000多粉丝。同样这个行为也是有公司规模化运作，而且部分公司手上的帐号已经不是小数。作为用户也应该成熟的认识到一个问题，长的又漂亮又能写的并没有那么多。</p>
+<p>第三次价值体系崩塌是陆续大家发现在淘宝上能以极廉价的成本买到粉丝。</p>
+<p>在这个事情上除了童瑶这种出了经济问题的事情外，知乎站方几乎是没有作为，这是知乎管理团队最让人痛恨的地方之一。</p>
+<p>-</p>
+<p>最后，帮助用户产生价值是社交网络内容建设的最重要的一个议题，<strong>如果用户无法在你的平台上获得利益，也不要奢望用户有所产出。同样，如果用户想看到好的内容，也要相对应的接受一个利益链条。</strong></p>
+<p>对于我喜欢的作者我能接受付费阅读，甚至我更倾向于付费阅读，但中国的大环境不允许，那些看不惯软文的用户，让你们掏钱，你们乐意吗？</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/知乎/" rel="tag"># 知乎</a>
+              <a href="/tags/软文/" rel="tag"># 软文</a>
+              <a href="/tags/盈利/" rel="tag"># 盈利</a>
+              <a href="/tags/社交网络/" rel="tag"># 社交网络</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2015/11/26/《我的少女时代》和青春片/" rel="prev" title="《我的少女时代》和青春片">
+      <i class="fa fa-chevron-left"></i> 《我的少女时代》和青春片
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2016/02/13/有关Parse关闭服务/" rel="next" title="有关Parse关闭服务">
+      有关Parse关闭服务 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Superwyh</p>
+  <div class="site-description" itemprop="description">纯个人博客，什么都不代表。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">154</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Superwyh</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">196k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2:58</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
