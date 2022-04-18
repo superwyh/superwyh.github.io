@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://blog.superwyh.com').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":false,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="Parse 关闭最大的问题是给市场讲了一个糟糕的故事。 其实真的核心用户对于 SAAS、PAAS 还是 BAAS 等一切云服务，对产品价钱的敏感度其实并没有那么高，至少不是最优先考虑的问题，用户层面看的更多是产品的稳定性，这个稳定性除了能否稳定使用以外更重要的就是能不能长期维护。 我们可以想象有相当多的 Parse 用户在这个一个事件里倒霉了，需要被迫切换，还有一些用户干脆不知道自己的 App 为">
+<meta name="keywords" content="Parse,BAAS,Leancloud">
+<meta property="og:type" content="article">
+<meta property="og:title" content="有关Parse关闭服务">
+<meta property="og:url" content="http://blog.superwyh.com/2016/02/13/有关Parse关闭服务/index.html">
+<meta property="og:site_name" content="Superwyh的无聊生活">
+<meta property="og:description" content="Parse 关闭最大的问题是给市场讲了一个糟糕的故事。 其实真的核心用户对于 SAAS、PAAS 还是 BAAS 等一切云服务，对产品价钱的敏感度其实并没有那么高，至少不是最优先考虑的问题，用户层面看的更多是产品的稳定性，这个稳定性除了能否稳定使用以外更重要的就是能不能长期维护。 我们可以想象有相当多的 Parse 用户在这个一个事件里倒霉了，需要被迫切换，还有一些用户干脆不知道自己的 App 为">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-06T09:21:55.486Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="有关Parse关闭服务">
+<meta name="twitter:description" content="Parse 关闭最大的问题是给市场讲了一个糟糕的故事。 其实真的核心用户对于 SAAS、PAAS 还是 BAAS 等一切云服务，对产品价钱的敏感度其实并没有那么高，至少不是最优先考虑的问题，用户层面看的更多是产品的稳定性，这个稳定性除了能否稳定使用以外更重要的就是能不能长期维护。 我们可以想象有相当多的 Parse 用户在这个一个事件里倒霉了，需要被迫切换，还有一些用户干脆不知道自己的 App 为">
+
+<link rel="canonical" href="http://blog.superwyh.com/2016/02/13/有关Parse关闭服务/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>有关Parse关闭服务 | Superwyh的无聊生活</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Superwyh的无聊生活</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">的无聊生活</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.superwyh.com/2016/02/13/有关Parse关闭服务/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Superwyh">
+      <meta itemprop="description" content="纯个人博客，什么都不代表。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Superwyh的无聊生活">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          有关Parse关闭服务
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-02-13 17:20:51" itemprop="dateCreated datePublished" datetime="2016-02-13T17:20:51+08:00">2016-02-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-06 17:21:55" itemprop="dateModified" datetime="2019-10-06T17:21:55+08:00">2019-10-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/评论/" itemprop="url" rel="index">
+                    <span itemprop="name">评论</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Parse 关闭最大的问题是给市场讲了一个糟糕的故事。</p>
+<p>其实真的核心用户对于 SAAS、PAAS 还是 BAAS 等一切云服务，对产品价钱的敏感度其实并没有那么高，至少不是最优先考虑的问题，用户层面看的更多是产品的稳定性，这个稳定性除了能否稳定使用以外更重要的就是能不能长期维护。</p>
+<p>我们可以想象有相当多的 Parse 用户在这个一个事件里倒霉了，需要被迫切换，还有一些用户干脆不知道自己的 App 为什么莫名其妙就不能用了，因为他们的产品是外包的，在这种情况下，这两种用户会怎么做，继续使用其他的 BAAS 服务？开玩笑，我肯定不会，连 Facebook 的产品都能停运，我凭什么相信别的创业公司，不如搞自己的一套东西出来。这已经不算是个商业问题了，是给用户一个不好的心理暗示。</p>
+<p>本身 BAAS 服务就是一个很尴尬的位置，真的大公司很少用，与其花钱买这个不如随便压榨一点过剩的开发能力就能搞出来自己的一套，就像推送这个玩意一样，最早觉得挺复杂的，真的用第三方发现有点麻烦以后其实熬几天就能自己写出来。</p>
+<p>真的 BAAS 用户无非就是两种，一种是小公司、小团队甚至是个人，没有能力去开发太多内容，用云服务降低开发成本，二种是公司规模其实不小，对价格不敏感，对 BAAS 服务商提供的某些服务有海量的依赖，又不想组建自己的一套团队去做，或者是其实组建团队去做性价比反而不高，就希望能有第三方提供稳定的服务。对于第二种客户的影响肯定是极大的，但第二种可能是真的现金牛，莫非国内的 BAAS 服务商真的去考虑从个人开发者手上赚钱？</p>
+<p>最近国内有几家云服务商过的都不好，曾经有很多朋友都给我推荐过他们的业务，但最终我宁可选择服务一塌糊涂的阿里云，并不是没事自虐玩，而是一个非常清晰的逻辑，多数云服务都是大公司过剩的计算能力变现，至少是觉得透支一部分边际成本很低的计算能力，这种规模的公司剩余价值是持续存在的，并且因为是快大肥肉，大公司肯定也会相对认真对待，没有财务压力的前提下长期肯定更加稳定，相比较创业公司一轮一轮的融资要更加靠谱的多。另外一切跟云服务相关的服务里，如果真的是长期考虑，非行业老大的我也肯定不会用，这些市场容不下那么多公司，就连 Facebook 下面的 Parse 在和 Google 、亚马逊竞争都倍感压力，没道理创业公司会占到更多的优势。</p>
+<p>回到 Parse 关闭的原因看，无非三点，一是 Facebook 本身不想把产品线扯的太长，二是高估了行业和自身增长，三是这个市场竞争对手太多，确实是食之无味的感觉，关了也无可厚非。</p>
+<p>至于 Leancloud，产品不错，也有价格优势，虽然有过些奇葩的问题，比如聊天 SDK 升级的前后不兼容的那种，还有客服经常找不到，但总体来说比 Parse 的覆盖面更全，抗冲击的能力肯定强的多。作为创业者肯定是不想这种公司遇到问题，但，路还是要走走看的。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Parse/" rel="tag"># Parse</a>
+              <a href="/tags/BAAS/" rel="tag"># BAAS</a>
+              <a href="/tags/Leancloud/" rel="tag"># Leancloud</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/01/25/从知乎的软文争端到社交网络的内容建设/" rel="prev" title="从知乎的软文争端到社交网络的内容建设">
+      <i class="fa fa-chevron-left"></i> 从知乎的软文争端到社交网络的内容建设
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2016/02/14/蔡骏的作品就那么难改编？/" rel="next" title="蔡骏的作品就那么难改编？">
+      蔡骏的作品就那么难改编？ <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Superwyh</p>
+  <div class="site-description" itemprop="description">纯个人博客，什么都不代表。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">160</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Superwyh</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">198k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:01</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://blog.superwyh.com').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":false,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="狗子跟我说，他发明了世界上最伟大的中文编程语言。我表示有点怀疑，因为作为一个底层全是英文的计算机来说，写中文究竟是多么累赘的事情完全不需多言。 他说，如果不信你看。 显示器上写的是： 当 山峰没有棱角的时候(     当 河水不在流(         当 时间停住日月不分(             当 天地万物化为虚有(                 我还是不能和你分手)))); 我吓出了一身冷">
+<meta name="keywords" content="OutOfMemory,小说,程序员">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OutOfMemory-7">
+<meta property="og:url" content="http://blog.superwyh.com/2015/04/19/OutOfMemory-7/index.html">
+<meta property="og:site_name" content="Superwyh的无聊生活">
+<meta property="og:description" content="狗子跟我说，他发明了世界上最伟大的中文编程语言。我表示有点怀疑，因为作为一个底层全是英文的计算机来说，写中文究竟是多么累赘的事情完全不需多言。 他说，如果不信你看。 显示器上写的是： 当 山峰没有棱角的时候(     当 河水不在流(         当 时间停住日月不分(             当 天地万物化为虚有(                 我还是不能和你分手)))); 我吓出了一身冷">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-06T10:14:56.307Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OutOfMemory-7">
+<meta name="twitter:description" content="狗子跟我说，他发明了世界上最伟大的中文编程语言。我表示有点怀疑，因为作为一个底层全是英文的计算机来说，写中文究竟是多么累赘的事情完全不需多言。 他说，如果不信你看。 显示器上写的是： 当 山峰没有棱角的时候(     当 河水不在流(         当 时间停住日月不分(             当 天地万物化为虚有(                 我还是不能和你分手)))); 我吓出了一身冷">
+
+<link rel="canonical" href="http://blog.superwyh.com/2015/04/19/OutOfMemory-7/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>OutOfMemory-7 | Superwyh的无聊生活</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Superwyh的无聊生活</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">的无聊生活</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.superwyh.com/2015/04/19/OutOfMemory-7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Superwyh">
+      <meta itemprop="description" content="纯个人博客，什么都不代表。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Superwyh的无聊生活">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          OutOfMemory-7
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-04-19 22:49:39" itemprop="dateCreated datePublished" datetime="2015-04-19T22:49:39+08:00">2015-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-06 18:14:56" itemprop="dateModified" datetime="2019-10-06T18:14:56+08:00">2019-10-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小说/" itemprop="url" rel="index">
+                    <span itemprop="name">小说</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小说/OutOfMemory/" itemprop="url" rel="index">
+                    <span itemprop="name">OutOfMemory</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>狗子跟我说，他发明了世界上最伟大的中文编程语言。我表示有点怀疑，因为作为一个底层全是英文的计算机来说，写中文究竟是多么累赘的事情完全不需多言。</p>
+<p>他说，如果不信你看。</p>
+<p>显示器上写的是：</p>
+<pre><code>当 山峰没有棱角的时候(
+    当 河水不在流(
+        当 时间停住日月不分(
+            当 天地万物化为虚有(
+                我还是不能和你分手))));
+</code></pre><p>我吓出了一身冷汗，看看钟表确定时间还早。作为全世界眼睁睁看着天亮最多的职业来说，我很确信距离天亮至少还有一个小时。</p>
+<p>真想不到我居然会梦到狗子。</p>
+<p>狗子是我最早的损友，我们两个人一起学的编程。中学的时候有一天狗子拿着一本书找到我，书名是《黑客一百天速成》。问我有没有兴趣，我说：“我擦，有啊。”于是我们两个组成了学校最早的黑客团体，当时还赶时髦的说自己是“红客”，因为爱国情绪高涨，每天都恨不得干掉几个小日本的网站。我们大部分的时间都在干两件事，一个是跟着书上的内容学了一个新的注入技术或者新的木马用法，然后看人民日报，发现哪跟中国关系不好，就找他们的网站，想办法黑掉一个两个，然后打上自己的名字。当然，最终从来没有成功过，但是我们还经常在脑内幻想在成功黑掉了敌对势力的网站后，新闻联播郑重提及我们两人名字的场景。我们是英雄。</p>
+<p>“你说，我们会成为英雄吗？”</p>
+<p>“会吧，只要坚持一定可以的！”</p>
+<p>“嗯，我新搞了一本牛逼的书，我觉得咱两看完这本一定可以的。”狗子给了我一本《黑客高手晋级》，拿到书的一刻我眼眶湿润了，因为书的封面是一面飘扬的五星红旗。</p>
+<p>但是，世界的好玩之处就是这样。我们每个人有百分之九十的时间在感慨故事和书上的多样性，坚持的认定自己的生活不过是一潭死水，永远比不上书上来的精彩。但显然，这个世界上也没有几个人会重新审视自己所经过和所盼望的生活，我想那种生活一定比任何一本书籍还要刺激。</p>
+<p>在狗子给我这本书之后没多久就转学到了另外一个城市。之后给我写过几封信，内容都是说自己正在向伟大黑客的重点去迈进。我相信他，因为他足够的执着，然而那个时候，我只是在准备高考。我当时耻辱的认为自己是被体制同化的一员，但没有认识到，其实自己的所要做的英雄，就是在维护体制。</p>
+<p>大约再次听到狗子的消息是我上大一的时候，在报纸上。狗子真的成了一名知名黑客。</p>
+<p>早上我翻昨天的晚报，在社会版块有一条新闻：“一无业男子学习黑客技术帮助网吧恶意攻击竞争对手，被当街捅死”。我看了看一张很不清楚的案发现场照片，我确定那个就是狗子。</p>
+<p>我找了找书架，居然真的找到了那本《黑客高手晋级》，里面还有几页练习本上撕下的草稿纸。上面是狗子歪歪扭扭写的关于中文编程的一些实现方法，后来我看过狗子的博客，他除了黑客外大部分时间都在做这个。因为他在自认为开窍后，觉得如果真的想让国人在计算机领域所有建树，必须能够做到中文编程。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/OutOfMemory/" rel="tag"># OutOfMemory</a>
+              <a href="/tags/小说/" rel="tag"># 小说</a>
+              <a href="/tags/程序员/" rel="tag"># 程序员</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2015/04/19/OutOfMemory-6/" rel="prev" title="OutOfMemory-6">
+      <i class="fa fa-chevron-left"></i> OutOfMemory-6
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2015/04/19/OutOfMemory-8/" rel="next" title="OutOfMemory-8">
+      OutOfMemory-8 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Superwyh</p>
+  <div class="site-description" itemprop="description">纯个人博客，什么都不代表。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">160</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Superwyh</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">198k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:01</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

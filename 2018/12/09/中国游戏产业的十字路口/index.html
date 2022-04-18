@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://blog.superwyh.com').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":false,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="我从2016年开始写一本叫做《中国游戏风云》的书，2018年交稿，后期断断续续改了一年左右，大概内容相当于是一个中国游戏产业的简史，开始写了100多万字的体量，最后删减到了70万字，成稿636页，删减的原因有对内容的调整，也有某些其他原因，留下的内容里，早期的内容详细一点，最近的内容写的比较少。我本身也是个码农出身，没怎么写过东西，如果赏脸愿意看我的书，也多多担待。 - 写完以后反而有很多特殊的感">
+<meta name="keywords" content="中国游戏风云,游戏,防沉迷,审查,网络游戏,传奇">
+<meta property="og:type" content="article">
+<meta property="og:title" content="中国游戏产业的十字路口">
+<meta property="og:url" content="http://blog.superwyh.com/2018/12/09/中国游戏产业的十字路口/index.html">
+<meta property="og:site_name" content="Superwyh的无聊生活">
+<meta property="og:description" content="我从2016年开始写一本叫做《中国游戏风云》的书，2018年交稿，后期断断续续改了一年左右，大概内容相当于是一个中国游戏产业的简史，开始写了100多万字的体量，最后删减到了70万字，成稿636页，删减的原因有对内容的调整，也有某些其他原因，留下的内容里，早期的内容详细一点，最近的内容写的比较少。我本身也是个码农出身，没怎么写过东西，如果赏脸愿意看我的书，也多多担待。 - 写完以后反而有很多特殊的感">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-09T12:30:30.613Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="中国游戏产业的十字路口">
+<meta name="twitter:description" content="我从2016年开始写一本叫做《中国游戏风云》的书，2018年交稿，后期断断续续改了一年左右，大概内容相当于是一个中国游戏产业的简史，开始写了100多万字的体量，最后删减到了70万字，成稿636页，删减的原因有对内容的调整，也有某些其他原因，留下的内容里，早期的内容详细一点，最近的内容写的比较少。我本身也是个码农出身，没怎么写过东西，如果赏脸愿意看我的书，也多多担待。 - 写完以后反而有很多特殊的感">
+
+<link rel="canonical" href="http://blog.superwyh.com/2018/12/09/中国游戏产业的十字路口/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>中国游戏产业的十字路口 | Superwyh的无聊生活</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Superwyh的无聊生活</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">的无聊生活</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.superwyh.com/2018/12/09/中国游戏产业的十字路口/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Superwyh">
+      <meta itemprop="description" content="纯个人博客，什么都不代表。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Superwyh的无聊生活">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          中国游戏产业的十字路口
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2018-12-09 21:28:23 / 修改时间：20:30:30" itemprop="dateCreated datePublished" datetime="2018-12-09T21:28:23+08:00">2018-12-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/评论/" itemprop="url" rel="index">
+                    <span itemprop="name">评论</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>9.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>9 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>我从2016年开始写一本叫做《中国游戏风云》的书，2018年交稿，后期断断续续改了一年左右，大概内容相当于是一个中国游戏产业的简史，开始写了100多万字的体量，最后删减到了70万字，成稿636页，删减的原因有对内容的调整，也有某些其他原因，留下的内容里，早期的内容详细一点，最近的内容写的比较少。我本身也是个码农出身，没怎么写过东西，如果赏脸愿意看我的书，也多多担待。</p>
+<p>-</p>
+<p>写完以后反而有很多特殊的感慨，梳理一下中国游戏产业经历了什么。其实也是我整本书写的内容：过去影响了中国一个时代游戏产业的原罪、现今繁荣下的隐患和未来我们究竟何去何从。</p>
+<p>我这里主要想说一下中国游戏产业的两座大山：盗版和污名化。</p>
+<p>软件的盗版化是一个很复杂的话题，这个问题并不只是中国遇到，在美国和日本都曾经遇到过，因为很多人并不理解为什么软件不能随意复制。因为在一些人看来，我买到了一个软件的拷贝，那么我就理所应当可以随意处置这个拷贝，包括复制这个拷贝，在雅达利时代，美国的盗版问题非常严重，大部分盗版者就是使用了这一套逻辑，当然这套逻辑在哪个角度来说都是站不住脚的，这个话题就不在这里细说了。</p>
+<p>中国的盗版问题复杂很多。</p>
+<p>中国从来不缺游戏玩家，能够找到的数据是中国大陆20世纪90年代末期单机游戏玩家就有四五千万，这个数字理应能够养活一些大体量的游戏公司，但中国的游戏玩家并不清楚，这是一个需要钱来养活的行业，热情没有办法给游戏从业者开工资。</p>
+<p>20世纪90年代末期，中国单机游戏最辉煌的那几年，盗版游戏的销量也都是正版销量的10~20倍，那个时代我们所熟悉的大部分游戏可能都没赚到过什么钱，当时支撑他们去继续做游戏的真的是那一身正气。</p>
+<p>1995年的时候，国家曾经直接关停了13家参与制作盗版的正规光盘厂，这种杀鸡给猴看的行为一定程度上限制了那个时间的盗版业发展，但随着光盘行业越来越难做，剩下的光盘厂又开始做起了盗版，而之后也没有过全国层面打击盗版源头渠道的行动。</p>
+<p>软件业是一个盈利模型非常特殊的行业。首先，作为软件行业必须随着硬件设备频繁更新，要持续推出新的产品，任何软件公司只要没有办法保障新产品的销量，那么公司一定会遇到严重的经营障碍，在这个前提下，软件公司做的事情多数不只是“回本”那么简单，更重要的是要至少把下一个版本更高的开发经费赚出来才可以，甚至行业普遍认为一款软件的盈利应该是软件本身开发成本的2~4倍才算是能够维持运作的收益，这就是为什么看起来表面利润非常高的行业，却依然不停有公司在倒闭。</p>
+<p>游戏行业相比较传统软件行业更加恶化的地方有三点，一是游戏行业的军备竞赛更加严重，每隔2~3年就会有一次明显的技术革新，要远比其他软件行业更加快速的革新，不适应的公司只有死路一条，无论从公司再到员工角度都必须随时学习和调整。二是常规软件后续开发的时候，对原有版本的代码重复使用率非常高，即便是微软 的Office 办公套件或者Adobe Creative Cloud也不会完全重新开发，多数代码依然沿袭上个版本，一些知名软件，像Photoshop的核心开发团队也不过只有30多人。而对于游戏来说，每个新款游戏几乎都是全新的内容，除了极少部分底层代码，多数内容都要根据新项目去重新开发，这使得游戏公司要承担更高的开发成本。三是游戏销售的机会成本非常高，任天堂的前总裁山内溥曾经形容游戏行业销售的随机性时候说到“比摸奖稍微好一点”，最终很多爆火的游戏最终只能靠猜测自己为什么火， 更多同样优秀但是无人问津的游戏最终只能被历史所遗忘。而这些现状在盗版严重 的中国会更加严峻，如果说在欧美做游戏是一般难度，那在中国就是炼狱难度，是一个十死无生的修罗场。</p>
+<p>1995年因为某些外交原因，中国政府在对待盗版这件事上重拳频出，除了前文提到的对光盘工厂的查处以外，这一年北京市工商局联合日本游戏机协会、世嘉和大量法律专业人士对北京的游戏机场所进行了一次突击检查，查封了累计超过上百万人民币的盗版产品，这是中国政府层面第一次大规模的打击盗版游戏的行动，而这次行动引了世界各地游戏媒体的报道，带来最直接的结果就是让大批量海外游戏公司看到中国政府不是纯粹放纵盗版，这年和在这之后一两年，大批海外游戏公司在中国设立分公司或者办公室</p>
+<p>也是这一年，靠着低价游戏在中国台湾风生水起的智冠在大陆销售《魔法门之英雄无敌》和《新蜀山剑侠传》等游戏，当时统一定价为49元，这种有强烈侵略性的定价方式短期为智冠取得了绝对的市场优势。而这个价格也是早期大陆正版游戏的标杆价格之一，之后随着探明市场，价格略微有些上浮，出现过68元和98元两个比较常见的定价，其后价格也都基本稳定在100元左右。当时游戏市场的头部游戏销量为1万套左右，少部分极受欢迎的游戏销量能够达到2万甚至3万套，笔者了解到当时游戏发行给代理商和书店在内的销售商需要预留的利润大概为每套游戏20到30元，而光盘和包装的制作成本大概是20元左右，也就是除去渠道成本，头部游戏大概能有几十万流入游戏公司，多的能有上百万，所以一直到1997年，大部分单机游戏公司其实过得并不算太差，至少能活着。</p>
+<p>1997年以后情况急转直下，一是随着大量海外游戏一窝蜂地引进，市场竞争立刻恶化；二是游戏的开发和发行成本在短时间内激增，其中渠道成本增幅最明显，部分游戏甚至要留出四五十元给各级渠道消化，而无论开发成本还是发行成本都是源自人员工资的上涨，不只是游戏行业，在那几年大陆随着经济发展，所有行业的人员工资都在明显提高；三是随着廉价刻录设备和光盘上市，盗版成本降低，与此同时也有很多人看到盗版有利可图而大规模进入，致使盗版普及。到了1998年，销量破万的游戏已经屈指可数，那一年国产游戏的销售冠军是目标软件的《铁甲风暴》，标价98元，在零售渠道销量达到了1.7万套，这也是大陆游戏当时的销售额记录。那两年大批游戏公司相继破产，包括吉耐思、麦思特、智群、万森、鸿达、雷声等十几家在国内市场举足轻重的公司一个接一个地惨死战场。这时候游戏行业的人都发现了一个事情，就是真的游戏的核心消费者对于游戏的价格并不是非常敏感，这部分用户不管68元还是98元都会消费游戏，而剩下的用户只要价格比盗版贵，无论如何都不会购买，在正版渠道和开发成本不可能降下来的前提下，只能选择提价，这也就是后来短期出现很多100~200元标价游戏的原因。</p>
+<p>在这些年里，所有对游戏价格试探的公司都发现了，上上下下调整价格，其实销量差距都不大，这才是盗版对中国游戏产业摧毁最严重的一件事，彻底固化了消费群体，正版永远只买正版，盗版用户也心安理得的用盗版。</p>
+<p>最终逼得一些游戏公司开始直接和盗版打价格战，市场上出现了大量的10元正版公司，当然也并不是完全的正版。以金山为首的公司也弄了一场红色正版风暴，开始冰点促销游戏，但现实是不光没有拯救中国的游戏产业，反而导致了整个游戏市场的崩盘，大批量公司直接破产。</p>
+<p>你无论如何都便宜不过盗版游戏。</p>
+<p>到了90年代末期，中国的游戏市场已经可以说是彻底崩盘，在那时，如果你对从业者说未来有一天中国能成为世界上最大的游戏市场，有可能会被直接送到安定医院。</p>
+<p>整个中国游戏市场最大的转折点来自于《传奇》的成功。</p>
+<p>《传奇》给中国我科技行业带来了两个最重要的转折，一是拯救了中国的游戏产业，让已经走向死亡边缘的中国游戏公司抓到了救命稻草，进而成为了一个让其余所有行业都项目的现金牛；二是拯救了中国的互联网产业，在电商业务崛起之前，网络游戏和移动梦网几乎是中国互联网市场唯二的可持续盈利模式，但移动梦网的故事没有坚持多久，之后中国多数互联网公司都通过种种手段希望在游戏市场里掘金，等到有了电商以后，中国的互联网产业也几乎都是围绕着电商和游戏，可以说中国互联网产业的辉煌和网络游戏息息相关。</p>
+<p>也就是说在某种程度上来说，中国的游戏从业者算是一定程度上解决了盗版的问题，毕竟通过其他的形式赚到了钱，让整个产业不至于彻底消失，但是中国的从业者们却无法抵挡另外一座大山的压顶，就是污名化。</p>
+<p>1990年4月30日，文化部、公安部下发了《关于加强台球、电子游戏机娱乐活动管理的通知》，里面对于电子游戏室的规定如下：电子游戏机室经营面积不得少于二十平方米，不得在中小学校门前二百米半径以内。这是我国最早对于电子游戏行业的规定。</p>
+<p>1995年，《电子游戏软件》的编辑收到了一封《温州晚报》的复印件，里面提及了温州正在组织一场声势浩大的围剿电子游戏的社会活动，包括中小学家长保证孩子无论在街机厅还是在家里都不能玩电子游戏，否则不能评三好学生、不能入团。手段包括誓师大会、呼吁书、请愿信、控诉状、现身说法、曝光台……而对于这种行为，杂志提出了一个好问题：“有法律依据或相关法规吗？”1996年3月，国家新闻出版署根据国务院《出版管理条例》授权，颁布了《电子出版物管理规定》，这是我国政府第一次有了正式的法律文件规范包括电子游戏在内的软件市场。</p>
+<p>这一年，《新周刊》的创刊号放了张毛泽东和邓小平的合照，边上配了一篇文章的题目“《中国可以说不》震惊西方世界”。确实，在那一年《中国可以说不》是文化市场最大的明星。这本1996年出版的书仅仅正版销量就超过了300万套，有人估算如果加上盗版销量在1000万以上，而书里的一些观点放在今天，尤其是这一章的内容里仍然值得玩味：“庸俗新闻观的几大特征是：失去道义评判能力及社会责任感，追逐丑闻并且千方百计做大，以自己的价值观去评判万事万物以及自愿孤立于世界以外，更严重的是，在功利主义驱动下不惜造假。”《中国可以说不》的热销极大程度上激活了大批年轻人的爱国心，以至于直接引发了一件中国游戏行业最早的社会争议事件。</p>
+<p>1996年6月3日，《天津青年报》的一篇报道《击退法西斯的幽灵》里提到四名天津光荣软件有限公司的员工因为政治内容抵制一款叫作《提督的决断》的游戏。6月26日《北京青年报》发表了《不良文化、遇抵津门》的跟进报道，之后消息遍布了国内媒体，包括《人民日报》、新华社、《南方周末》和《焦点访谈》都做了相关报道。这是海外游戏公司第一次与中国政治文化正面交锋，后来人们将这次事情称为“天津光荣四君子事件”，而光荣公司的名字也被用的一语双关。</p>
+<p>这四个年轻人为高原、郭润京、祁巍、梁广明，都曾经参与制作《三国志V》和《第七个秘馆》两款口碑不错的游戏。1996年5月，四人受到公司要求制作《提督的决断3》的部分美工内容，但因为发现游戏内包括大量侵华日军背景内容，四人决定站出来抵制这款游戏。而《提督的决断》这款游戏1995年就曾经在上海被查处，之前曾经要求光荣北京制作美工部分工作，也被拒绝。其中年龄最小的梁广明在接受采访时提道：“这些让我们觉得挺别扭，就算太平洋战争主要是日美作战，但它毕竟关系到中国，同属于世界反法西斯的范畴，这些形象和它内容里的投降、失败、沦陷，让我们感情上不能接受。时间虽然过去了，但历史却忘不掉。”关于这个事情以两件事的发生而告终，一是天津光荣的11名员工集体离职，二是天津光荣在7月17日的《北京青年报》上刊登了“反省书”，里面“向中国人民致以深深的歉意”。</p>
+<p>1996年8月18日，《人民日报》出现了一篇名为《为了民族的尊严——记天津光荣软件有限公司四青年》的文章，对这四位员工的评价颇高，之后中央电视台和其他主流媒体也做了相关专题。</p>
+<p>对于这次事件《家用电脑与游戏》评论道：“电子游戏是在高科技土壤种生长起来的一棵文化之树。而游戏软件和图书、影视作品一样，是地地道道的文化商品。因此，我们决不能对它的文化属性漠然视之。”“更重要的是，如何发展我们国家自己的游戏文化产业已经是迫在眉睫的当务之急。”</p>
+<p>这次事件在一定程度度上引发了我国有关部门对于游戏这种潜在文化产品的重视，这个重视的背后可以说是各有利弊。</p>
+<p>1996年知名作家毕淑敏受邀在《家用电脑与游戏机》上发表了一篇关于电子游戏的文章，开篇第一句就是：“应该像焚烧鸦片一样，销毁某些电子游戏。”</p>
+<p>同年，在《电脑报》主办的“游戏软件发展趋势研究讨论会”上，《家用电脑与游戏机》的副主编孙百英就提到过：“大家谈了许多游戏市场的问题，但我特别要强调当前为游戏正名的必要性。目前电子游戏扔遭到广泛地抵制，不少地方视其为洪水猛兽，称之为“电子鸦片”。这种市场阻力是任何软件的发展不曾遇到的。电子游戏是很好的娱乐形式，是一个潜力巨大的新兴产业，对未来的教育变革意义重大。不明确它的应有地位，顺利发展是不可能的。”之后，《计算机世界》的记者朱春燕又补充道：“我觉得孙先生说的很重要，现在应给游戏软件正名。《计算机世界》发行量很大，是国内有关计算机影响最大的报纸。当初曾设想在软件版开设游戏专栏，后来好多人都来劝我们说，你要办游戏，就算把你们给砸了。”</p>
+<p>有人跟笔者提到，也是在20世纪90年代后几年，去校园招聘，别的公司都可以，就是游戏公司不行，原因“这是教坏小孩的东西，犯法的。”而笔者一位传统媒体的好友，1999年在一个地方纸媒上发表了一篇给正在放暑假的学生介绍电脑游戏的文章，结果被报社内部通报批评，险些丢了工作，原因如出一辙的是：“这是教坏孩子的东西。”在那会儿，游戏就莫名其妙地成为了敏感词。</p>
+<p>2000年4月24日，光明日报发布了一篇《别让游戏机害了一代人！——一位母亲的呼吁》的文章，正式宣布开始了主流媒体对游戏行业的抨击，作者为李鹏翔和俞俭。文章里提道：“这位母亲呼吁，游戏室毁了我的儿子，毁了我们的一切。救救孩子吧，再也不能让这软刀子杀人了！”5月9日，《光明日报》一名叫夏斐的记者发表一篇文章《电脑游戏：瞄准孩子的“电子海洛因”——由一位母亲控诉引出的暗访》，这篇只有3505字的文章险些以一己之力毁掉中国整个游戏产业。</p>
+<p>在这篇文章被炒热以后，出现了一段时间内集中密集的对游戏产业的批判以及政策。</p>
+<p>福无双至祸不单行。</p>
+<p>2002年，仅仅两年以后又发生了另外一件事。6月16日，凌晨2时40分许，北京市海淀区学院路20号石油大院内的石油粮店2层发生的一起恶意报复纵火事件，致使25人死亡、12人不同程度受伤。之后这个事件以网吧名字命名，被称为北京“蓝极速”网吧恶意纵火事件。最终，在纵火者中，两名被判处无期徒刑，一名被判处有期徒刑12年，一名因不满14岁而免于刑事责任。在2004年，两名被判无期的犯人被减刑。两名网吧经营者被判三年和一年零六个月，并处罚金。9月至10月间趁火打劫的四名窃贼被判处10个月到4年的有期徒刑。</p>
+<p>《人民日报》在一篇报道里面写到了“蓝极速”事件的处理结果，其中提道：“今后在北京不鼓励发展网吧，有关部门对‘网吧’不再审批发证。在整顿中，文化、公安、工商、市政府法制办等部门要重新修改有关网吧管理、整顿的法规。合法的重新审核，违法的严肃查处，并没收其非法所得和经营工具；情节严重的，吊销其营业证照，并将其登入‘工商信用监督系统’。同时积极发动群众举报‘黑网吧’，决不允许其非法经营。”</p>
+<p>我们不能否认当时我国网吧的乱象，安全隐患也是客观事实，事实上这次查处对日后网吧行业的积极影响也是深远的，如果没有这种强硬的措施很难让中国的商人主动改进安全措施，更难让中国的商人拒绝孩子们的进入，这是要肯定拍手称快的。但也不可否认这种一刀切的做法不是那么合适，很多人认为这是中国整个互联网行业懒政的集中体现。那一年9月14日，南京市江宁区汤山镇发生了一起恶劣的投毒事件，最终造成42人死亡，300多人中毒，而南京政府也没有选择关停南京所有餐饮企业。那一年，从6月到9月整整三个月北京没有一家网吧开业，一直到10月才陆续有50多家网吧营业。次年3月，北京重新开发对网吧资格的审批，但要求十分严格，以至于很长时间也没有新增网吧。</p>
+<p>更严重的问题出现在了游戏审批环节，在蓝极速事件发生以前，一款游戏的审批时间维持在45天以内，但是到了2003年，这个时间被无限延长，甚至多数公司要有超过半年的时间等待审批结果。</p>
+<p>这次事件直接导致了中国的网吧行业一落千丈，进而连带了整个网络游戏产业，那一时间最大的政治正确就是批判网络游戏。</p>
+<p>2004年9月3日，文化部为贯彻落实《中共中央国务院关于进一步加强和改进未成 年人思想道德建设的若干意见》的要求，打击违法网络游戏经营活动，规范网络游戏市场经营秩序，为未成年人健康成长创造良好的网络文化环境，根据《国务院对确需 保留的行政审批事项设定行政许可的决定》和《互联网文化管理暂行规定》等有关文件，连续查处了一批“违法”网络游戏，其中包括瑞典开发商Paradox的二战游戏《钢铁之心》（Hearts of Iron，也被称作《虎胆雄心》），因为西藏、满洲和台湾“独立”标识被查禁；Innerloop工作室开发的《秘密潜入2》（Sneaked 2）因为有袭击解放军、损害解放军形象的内容被查禁。除此以外《梦幻麻将馆》《命令与征服3—— 将军》《生化危机》和《雷神之锤3》也都因为各种原因被查处。同时还有四家游戏公司因为未经批准擅自从事网络游戏经营活动而被查处，其中被查处的深圳金智塔公司市场部负责人表示：“我们的经营项目是经过国家新闻出版署审批通过的合法产 品，所以不知道文化部为什么会做出此种处罚决定。”而文化部之所以插手的原因是在两个月前，国务院颁布了《行政许可法》，其中明确规定了文化部负责互联网文化内容审查和管理。这事实上就是涉及了新闻出版总署和文化部两家的职权划分问题， 而这两家的职权划分不明晰产生过对中国游戏行业更严重的一次影响是几年后《魔兽世界：燃烧的远征》的审批问题，这种多头监管的情况长时间存在于中国互联网和游戏产业。</p>
+<p>也是从这个时期开始，“网瘾”成为最热门的、中国家长甚至是中国社会最关心的词汇之一。而网瘾这个词本身就是就是来自一个玩笑。1995年，来自纽约的精神病学家伊凡·戈德伯格（Ivan Goldberg）决定在自己创建的精神病学社区 PsyCorn. Net上开个玩笑，发布了一篇帖子，帖子内容模仿《精神障碍诊断与统计手册》 （Diagnostic and Statistical Manual of Mental Disorders）定性了一种被称为“网络成瘾症”（Internet addiction disorder），提供了七条判断标准：因网络而放弃或减少重要 的社交和职业活动、对互联网抱有幻想、手指会自觉或不自觉地做出敲打键盘的动作 等等。这本来只是为了嘲讽《精神障碍诊断与统计手册》死板开的玩笑，却收获了意想不到的反馈，戈德伯格的几名同事看到后表示自己可能有网瘾，已经玩到停不下来的戈德伯格干脆创建了一个“网瘾支持小组”。</p>
+<p>关于网络成瘾症，戈德伯格自己表示：“‘网络成瘾症’实在是个非常不合适的名字，它会让人联想到毒品。毒品是真正能让人上瘾、让人体内的每一个细胞发生改变的物质，但网络它不是。把人的每一种行为都放到精神病学的范畴讨论，并试图用医学理论去加以理解的做法是荒谬的。如果你把‘成瘾’的概念扩大到每一种行为， 你会发现人们读书会成瘾，跑步会成瘾，与人交往也会成瘾。”</p>
+<p>虽然网络成瘾因为戈德伯格在欧美国家也形成过一阵讨论，但并没有成为主流观 点。笔者咨询了数名在美国和英国的心理医生，得到了非常近似的答复：网络成瘾状况确实存在，但并不是一种严重的成瘾状况，对比饮酒成瘾之类损害要轻微得多，更不能和毒品成瘾相提并论，绝大多数情况不需要特殊干预，唯一需要注意的情况是因为沉迷游戏而产生了无法区分游戏和现实世界等认知障碍的情况。</p>
+<p>其中一名医生提道：“如果因为网络或者游戏严重影响了你的正常生活，那有问题的显然不是网络或者游戏，而是你的生活出了问题。”</p>
+<p>2005年12月27日，天津一名13岁的少年张潇艺从24层楼一跃而下，结束了自己年轻的生命，在人们整理少年遗物时发现了四封遗书，分别写给“新唱片公司”“暗夜小组”“师父”和自己的，还有总共6万字的小说，其中4万字的《守望者传》为《魔兽争霸》同人小说。在遗书中少年写道：“我是个垃圾，真正的垃圾，什么都干不好的垃圾。我崇拜的是S.H.E、守望者，他们让我享受到了一种快乐的感觉。我有三个知心朋友——尤第安、泰兰德、复仇天神，我在哪儿都可以更加快乐。我还有许多亲人，他们虽然骂过我，打过我，可是我知道他们对我是最好的。我还有许多老师，他们都是最好的。可有什么用啊，我是个没用的垃圾，光会让他们失望，唉，虽说人生都有闪光点，可我的那些，都是少得可怜。我什么事情都干不好，立下的誓言有许多都完不成，圣诞刚刚过去了，我也要离开这个世界了，我相信，会有转世，会有天堂、地狱的，如果来世我还是人，我一定会是好孩子的。”</p>
+<p>随着张潇艺的去世，还出现了其他的一批反网瘾斗士，甚至让一些成功学人士找到了新的工作。</p>
+<p>日后其实也从来没有出现过什么官方政策明确为游戏行业洗刷污名化，但是随着产业的发展，和话语权开始转移到年轻人手上，游戏行业的污名化也逐渐有所转变。</p>
+<p>只不过从2017年开始，又出现了一段时间内集中的对游戏产业的批判。</p>
+<p>关于游戏去污名化，我一直和很多从业者有着一个截然不同的观点，有一大批从业者会去普及游戏的积极意义，比如提高智商、学习知识锻炼反应等方面，尽可能把游戏包装成一件有益身心的事情。但是我一直不认同这个观点，首先这么做肯定是没有效果的，因为从业者也这么说了十几年了，也没发现有多少人真的信了游戏的积极意义，其次是，我都不信。</p>
+<p>我觉得最理性的做法还是让人愿意正视娱乐是人类的刚需，同时游戏只是其中之一的娱乐方式。我国传统文化里对娱乐过于排斥，这才是所有娱乐产业在中国都遇到的最大阻碍。</p>
+<p>娱乐无罪。</p>
+<p>当然，中国游戏的污名化绝对不能忽视那些游戏产业里的猪队友。在每个时间点上，总归是有一些游戏公司好像不知道自己已经被污名化了这件事，兢兢业业的对外宣传自己游戏的尺度多大，多么黄暴，生怕别人忘了你。</p>
+<p>-</p>
+<p>2018年是对游戏行业很重要的一年，我周围做游戏的朋友大多都在已经转行和考虑转行的道路上。</p>
+<p>一方面是游戏公司整体效益不好，而这个效益不好的背后又是三点，一是用户的获取成本已经到了大多数公司都无法承受的程度，在资本的疯狂堆积下，堆出来了一座金山，但是通往这种金山的买路钱同样是一袋一袋的黄金；二是腾讯和网易两大巨头占据了过多的资源，包括玩家的游戏时间，曝光渠道，分发渠道，甚至包括高质量的员工，除此以外还有一大批二三线公司在疯狂搜刮现有的资源，导致了中国游戏公司有了一个非常清晰的分层，任何公司想要突破自己的天花板都不是易事；三是政策层面的不确定性太大，从2018年3月开始就已经停止新发游戏版号，到现在为止依然没有恢复游戏版号审批，甚至有传言可能整个2019年都不会再有新的版号，这让整个行业蒙上了一层不确定性的阴影。虽然中国的经济环境整体不好，但游戏行业遇到的问题和大环境却没什么必然关系，游戏行业的问题更多是自上而下的。游戏产业的不稳定带动了其他很多产业也走到了崩盘边缘，比如下游的美术和音乐外包公司，比如游戏和美术相关的培训机构，再比如其实国内很多的所谓二次元公司，背后的金主都来自游戏产业。整个ACG产业的资金源头基本都和游戏相关，现在真的是牵一发而动全身。甚至我前文提到过，中国整个互联网产业对游戏的依赖比多数人的想象都大。</p>
+<p>另外一方面是游戏产业的红利期已经明显过去了，无论从用户数还是消费能力的统计来看，中国的游戏产业已经很难再复制前些年的粗放式增长，哪怕没有政策限制也非常难，使得一批人开始从游戏行业里面把钱拿出来投资到其他行业里。这可以理解为是整个游戏行业的洗牌期。</p>
+<p>这是我题目主要想说的意思，中国的游戏产业就在一个十字路口上，对于产业本身，对于公司，对于个人来说都是如此。</p>
+<p>产业已经结束了粗放期，之前摸索的那一套模式也遇到了瓶颈，未来到底何去何从？</p>
+<p>游戏公司也碰到了天花板，很多游戏是做也不是，不做也不是，到底要如何选择？</p>
+<p>从业者心里也清楚，这个行业能持续多久和从业者本身关系不大，刀不在自己的手上。</p>
+<p>2019年会是非常难熬的一年，但是也有可能会是未来五年里最好的一年。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/中国游戏风云/" rel="tag"># 中国游戏风云</a>
+              <a href="/tags/游戏/" rel="tag"># 游戏</a>
+              <a href="/tags/防沉迷/" rel="tag"># 防沉迷</a>
+              <a href="/tags/审查/" rel="tag"># 审查</a>
+              <a href="/tags/网络游戏/" rel="tag"># 网络游戏</a>
+              <a href="/tags/传奇/" rel="tag"># 传奇</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/11/28/原来物流业的最后一公里就是不要这一公里了/" rel="prev" title="原来物流业的最后一公里就是不要这一公里了">
+      <i class="fa fa-chevron-left"></i> 原来物流业的最后一公里就是不要这一公里了
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/12/如何理解「所谓的国漫寒冬，其实是在倒逼作品升级」这一观点？/" rel="next" title="如何理解「所谓的国漫寒冬，其实是在倒逼作品升级」这一观点？">
+      如何理解「所谓的国漫寒冬，其实是在倒逼作品升级」这一观点？ <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Superwyh</p>
+  <div class="site-description" itemprop="description">纯个人博客，什么都不代表。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">160</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Superwyh</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">198k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:01</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

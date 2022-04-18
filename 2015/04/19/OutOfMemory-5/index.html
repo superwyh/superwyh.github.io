@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://blog.superwyh.com').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":false,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="早上起晚了，着急上个厕所就赶紧去上班，但死活也找不到手机，差点拉裤子里。就这样，我成了一个最晚到公司的人。 在我迈进公司大门的时候就发现事情有点不对劲，因为电脑都黑着，几个人为围在一起，走近了才发现，哥几个在斗地主。还是用纸牌。 “我说，我虽然来晚了，你们也不能这么欺负我这个领导是不是。” 一员工出了张牌后拿兰花指指了一下墙上的开关，我乖乖的走过去。一按，如果正常情况下，客厅的灯会亮，但现在什么都">
+<meta name="keywords" content="OutOfMemory,小说,程序员">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OutOfMemory-5">
+<meta property="og:url" content="http://blog.superwyh.com/2015/04/19/OutOfMemory-5/index.html">
+<meta property="og:site_name" content="Superwyh的无聊生活">
+<meta property="og:description" content="早上起晚了，着急上个厕所就赶紧去上班，但死活也找不到手机，差点拉裤子里。就这样，我成了一个最晚到公司的人。 在我迈进公司大门的时候就发现事情有点不对劲，因为电脑都黑着，几个人为围在一起，走近了才发现，哥几个在斗地主。还是用纸牌。 “我说，我虽然来晚了，你们也不能这么欺负我这个领导是不是。” 一员工出了张牌后拿兰花指指了一下墙上的开关，我乖乖的走过去。一按，如果正常情况下，客厅的灯会亮，但现在什么都">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-06T10:14:46.838Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="OutOfMemory-5">
+<meta name="twitter:description" content="早上起晚了，着急上个厕所就赶紧去上班，但死活也找不到手机，差点拉裤子里。就这样，我成了一个最晚到公司的人。 在我迈进公司大门的时候就发现事情有点不对劲，因为电脑都黑着，几个人为围在一起，走近了才发现，哥几个在斗地主。还是用纸牌。 “我说，我虽然来晚了，你们也不能这么欺负我这个领导是不是。” 一员工出了张牌后拿兰花指指了一下墙上的开关，我乖乖的走过去。一按，如果正常情况下，客厅的灯会亮，但现在什么都">
+
+<link rel="canonical" href="http://blog.superwyh.com/2015/04/19/OutOfMemory-5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>OutOfMemory-5 | Superwyh的无聊生活</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Superwyh的无聊生活</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">的无聊生活</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.superwyh.com/2015/04/19/OutOfMemory-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Superwyh">
+      <meta itemprop="description" content="纯个人博客，什么都不代表。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Superwyh的无聊生活">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          OutOfMemory-5
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-04-19 22:49:37" itemprop="dateCreated datePublished" datetime="2015-04-19T22:49:37+08:00">2015-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-10-06 18:14:46" itemprop="dateModified" datetime="2019-10-06T18:14:46+08:00">2019-10-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小说/" itemprop="url" rel="index">
+                    <span itemprop="name">小说</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/小说/OutOfMemory/" itemprop="url" rel="index">
+                    <span itemprop="name">OutOfMemory</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>早上起晚了，着急上个厕所就赶紧去上班，但死活也找不到手机，差点拉裤子里。就这样，我成了一个最晚到公司的人。</p>
+<p>在我迈进公司大门的时候就发现事情有点不对劲，因为电脑都黑着，几个人为围在一起，走近了才发现，哥几个在斗地主。还是用纸牌。</p>
+<p>“我说，我虽然来晚了，你们也不能这么欺负我这个领导是不是。”</p>
+<p>一员工出了张牌后拿兰花指指了一下墙上的开关，我乖乖的走过去。一按，如果正常情况下，客厅的灯会亮，但现在什么都没有发生。</p>
+<p>“怎么回事？”</p>
+<p>“上个星期拆迁队过来说的，今天开始断水断电。”</p>
+<p>我这才想起来这个事情。我们公司是放在一个上世纪七十年代的居民楼里，整栋楼里除了两对等死的老夫妇和三条流浪狗外，就只有我们公司的五个生物。主要是当时看便宜，我就直接买下了，而且老结构的房子面积大，办公条件还算好，又在市区里。</p>
+<p>但大约半年前就有开发商说要在这里建造一个商业中心，拆迁办花了三个月就搞定了除我们之外的全部户主，本来那两对等死的老夫妇死活不同意，但最近发现他们的房子空了出来，也不知道是同意了，还是……死了……　</p>
+<p>这两天光在讨论桂花的项目和离婚的事情，生生的把这茬给忘记了。</p>
+<p>看我在那里呆滞了很久，终于有一个有良心的员工开口了：“老板啊，不是我说你，我见过太多公司。真的没见过混的像你这么落魄的老板了，你看你仪表堂堂，真的不适合做计算机这个行当，要不然你换行算了。”</p>
+<p>我大约花了五秒思考仪表堂堂为什么和计算机矛盾，然后又看了一眼哥几个，就明白了。</p>
+<p>“换行啊……怎么换行啊……　”</p>
+<p>“老板，你傻了啊，回车啊！”边上一个还在专心打牌的员工说道。</p>
+<p>时间被冰封了几秒，我继续问道：“那你们说我转行做什么啊？”</p>
+<p>建议我转行的员工继续回答：“要我说啊，你做点什么不可以啊？去工地板砖，去当城管，实在不行你他妈的跑马拉松去。什么不比这个轻松啊！”</p>
+<p>“有道理，但是这个是我的梦想，不能半路放弃啊！”</p>
+<p>“老板，梦想这个东西啊……”员工停了几秒后没有继续，反而开始叹气。</p>
+<p>“你怎么了？你有什么梦想？”</p>
+<p>“我啊……梦想也算是实现了一半。”</p>
+<p>“一半？什么意思？”</p>
+<p>“小时候想做警察叔叔……”</p>
+<p>“那为什么说实现了一半？咱的工作和警察完全没有关系吧？”</p>
+<p>“嗯……警察那部分没实现，叔叔那部分实现了……　”</p>
+<p>“哎……”</p>
+<p>就这样我们讨论了半天怎么办，最终投票决定公司还要继续做下去，没有别的办法只能先去别人的公司凑合几天，用这个时间去找之后的地方。人少的好处是别人给你施舍点都不是什么大负担。于是就联系了一个以前客户的公司，在他们那里呆几天。就这样，上午公司几个人在一起收拾办公室，把该打包的都整理好，中午就联系了个搬家公司，还特地问了一下搬家公司能不能把东西给我们搬到楼上。我真怕也累死一个员工。</p>
+<p>一直到下班时间才把所有东西都抬了上去，以前没觉得有多少，这么一搬才发现积攒的东西真不少，从电脑到桌子加起来也拉了一车。</p>
+<p>搬完后给师傅结钱，被要价三百。</p>
+<p>“怎么这么贵啊？”</p>
+<p>“你们这两个地方横穿一个城市，十五公里以上就要加钱，而且现在还是搬家高峰期……”</p>
+<p>“真是的啊……好吧，钱给你……”我心痛的拿出三张红色的毛爷爷，吐了一句悔终生的槽：“你们这比我们赚钱多了。我这一个月也就四五千。”</p>
+<p>师傅接过钱，咧着大嘴笑道：“是啊，我做程序员那会也这工资。”</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/OutOfMemory/" rel="tag"># OutOfMemory</a>
+              <a href="/tags/小说/" rel="tag"># 小说</a>
+              <a href="/tags/程序员/" rel="tag"># 程序员</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2015/04/19/OutOfMemory-4/" rel="prev" title="OutOfMemory-4">
+      <i class="fa fa-chevron-left"></i> OutOfMemory-4
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2015/04/19/OutOfMemory-6/" rel="next" title="OutOfMemory-6">
+      OutOfMemory-6 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Superwyh</p>
+  <div class="site-description" itemprop="description">纯个人博客，什么都不代表。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">160</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Superwyh</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">198k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:01</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
