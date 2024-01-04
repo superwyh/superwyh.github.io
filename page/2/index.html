@@ -180,6 +180,101 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.superwyh.com/2020/02/22/微信小程序开发笔记-云函数login调用失败/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Superwyh">
+      <meta itemprop="description" content="纯个人博客，什么都不代表。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Superwyh的无聊生活">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/22/微信小程序开发笔记-云函数login调用失败/" class="post-title-link" itemprop="url">微信小程序开发笔记 - 云函数login调用失败</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-22 18:12:56" itemprop="dateCreated datePublished" datetime="2020-02-22T18:12:56+08:00">2020-02-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-17 22:00:52" itemprop="dateModified" datetime="2020-05-17T22:00:52+08:00">2020-05-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>377</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.确认自己电脑上的node和npm安装正确，可以用 -v 查询，如果没有安装成功需要重新安装。</p>
+<p>2.在cloudfunctions下面login文件里输入运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save wx-server-sdk@latest</span><br></pre></td></tr></table></figure></p>
+<p>安装最新的wx sdk。安装成功后，在login目录下，应该可以看到看到新增文件package-lock.json。</p>
+<p>3.在miniprogram目录下的app.js文件，修改env参数（默认my-env-id），把它改为你运行环境的环境id（点击“云开发”，抬头显示的“当前环境”内容就是环境id）。</p>
+<p>4.在cloudfunctions根目录下，右键选择“同步云函数列表”，提示成功。</p>
+<p>5.在login目录下，右键选择“上传并部署：所有文件”，提示成功。</p>
+<p>6.点击页面上方的“编译”。</p>
+<p>7.重新点击“点击获取openid”，就可以成功。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://blog.superwyh.com/2019/12/02/偶然发现的两个小细节/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1172,100 +1267,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.superwyh.com/2019/01/27/《英雄联盟》最早是怎么火起来的/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Superwyh">
-      <meta itemprop="description" content="纯个人博客，什么都不代表。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Superwyh的无聊生活">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/01/27/《英雄联盟》最早是怎么火起来的/" class="post-title-link" itemprop="url">《英雄联盟》最早是怎么火起来的</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-01-27 18:01:39 / 修改时间：18:02:56" itemprop="dateCreated datePublished" datetime="2019-01-27T18:01:39+08:00">2019-01-27</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/游戏/" itemprop="url" rel="index">
-                    <span itemprop="name">游戏</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              <span>1.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>我也不是什么高端玩家，只是偶然跟别人聊起来这个问题，觉得很有意思。</p>
-<p>我是2009年中后开始打《英雄联盟》的，当时还是美服内测，之所以打这个游戏的理由特别奇怪，因为我当时去图书馆上课的时候不喜欢拿电脑，但要说一直学习也挺难的。当时《英雄联盟》第一个版本里有个纯Flash版本，可以在浏览器里面直接玩，于是我们就和一堆老外经常在图书馆的电脑里面打《英雄联盟》，图书馆被我们硬生生玩成了网吧，也就是其实一开始对于我们来说和4399的游戏是一个类型的，就是当作小游戏消磨来的。</p>
-<p>哪怕客户端版本对电脑要求也很低，我记忆中大概只有三四百mb的大小，而且因为也是基于Flash Player的，对配置的要求也不高，Flash的表现能力在当时上限大家心里清楚，想做好可能性也不大。</p>
-<p>在当时大学里传播速度非常快，大概到了2010年中，我所在的大学和周围的学校这个游戏已经非常有统治力了。我们学校当时已经有了第一次《英雄联盟》的电竞比赛，一共十几只队伍参赛，而且还是在完全没有官方支持的情况下，所有人都是自带电脑，那时我其实就发现了两件很有意思的事情。</p>
-<p>一是团队性要比DotA更强，开始玩的时候会发现《英雄联盟》很多的技能是有残缺的，就是玩家会觉得连不起来技能，特别难受，但是真的到打比赛才明白，很可能是刻意为之的，《英雄联盟》的技能都是团队Combo，几个英雄的技能必须接到一起才有效果，时至今日都是如此。团队性强的结果就是当时我们都在疯狂抓周围的同学一起玩游戏，就是为了五人黑，这种行为其实就是在给Riot拉用户。</p>
-<p>二是观赏的门槛非常低，早期英雄技能设计的非常中规中矩，虽然看起来不够有意思，但是对于观看者来说却非常友好，方便传播。</p>
-<p>2010年，《英雄联盟》已经在国内开始运营了，我还记得当时暑假回国和国内做游戏的朋友聊天，说到这款游戏，我当时说在美国火炸了，国内做游戏的人都表示不理解，并且那个暑假我见过的所有人聊到这个话题的都认为这款游戏不可能在中国火起来，毕竟在中国当时DotA的群众基础非常好。</p>
-<p>而在我记忆中，到了2010年底，《英雄联盟》在美国的火爆程度就已经绝对不逊色于DotA，之所以在美国市场能火起来，很多人经常忽略一件事，《英雄联盟》是一款免费游戏，而《魔兽争霸3》是需要买个拷贝的，虽然当时《魔兽争霸3》已经非常便宜了，可能只有30美元左右，但是依然是有传播成本的，而《英雄联盟》下载下来就可以玩。</p>
-<p>国内玩家虽然可以很方便的玩盗版，但是美国并不是，尤其是在校园里比较麻烦，因为当时我们学校用学校网络下盗版被抓住是会蹲监狱的。</p>
-<p>再次之前我们邀请很多美国人一起玩DotA都是因为需要买游戏所以放弃的，所以《魔兽争霸3》这个平台给与的帮助和限制都一样严重。</p>
-<p>《英雄联盟》这款游戏从一开始就在全方位的降低门槛，包括<strong>获取游戏的门槛</strong>，<strong>玩家上手的门槛</strong>，以及<strong>游戏内容传播的门槛</strong>都非常低。</p>
-<p>在获取到玩家以后又开始针对高端玩家进行复杂性的设置，比如更多操作复杂的英雄，比如更通过控制地图资源来丰富选手的战术多样性，加上成功的电竞化运作。</p>
-<p>至少作为一个早期玩家来说，《英雄联盟》的成功绝对不是偶然。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1336,20 +1337,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">101</span>
+          <span class="site-state-item-count">102</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">163</span>
+        <span class="site-state-item-count">165</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1374,7 +1375,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -1388,7 +1389,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:04</span>
+    <span title="站点阅读时长">3:05</span>
 </div>
 
         
