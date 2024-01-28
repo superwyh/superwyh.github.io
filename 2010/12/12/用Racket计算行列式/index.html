@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.geekzu.org/css2?family=Noto+Serif+SC&display=swap/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://blog.superwyh.com').hostname,
+    root: '/',
+    scheme: 'Mist',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":false,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="最基础的是拉普拉斯展开。 1234567891011121314151617181920; 计算行列式(define (determinant matrix)  (define (remove-row-col m row col)    (for/list ([r (in-range (length m))]               #:when (not (= r row)))      (">
+<meta name="keywords" content="Racket,函数式编程,行列式,线性代数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用Racket计算行列式">
+<meta property="og:url" content="http://blog.superwyh.com/2010/12/12/用Racket计算行列式/index.html">
+<meta property="og:site_name" content="Superwyh的无聊生活">
+<meta property="og:description" content="最基础的是拉普拉斯展开。 1234567891011121314151617181920; 计算行列式(define (determinant matrix)  (define (remove-row-col m row col)    (for/list ([r (in-range (length m))]               #:when (not (= r row)))      (">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2024-01-28T17:50:03.928Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用Racket计算行列式">
+<meta name="twitter:description" content="最基础的是拉普拉斯展开。 1234567891011121314151617181920; 计算行列式(define (determinant matrix)  (define (remove-row-col m row col)    (for/list ([r (in-range (length m))]               #:when (not (= r row)))      (">
+
+<link rel="canonical" href="http://blog.superwyh.com/2010/12/12/用Racket计算行列式/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>用Racket计算行列式 | Superwyh的无聊生活</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Superwyh的无聊生活</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">的无聊生活</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="http://www.superwyh.com/" rel="noopener" target="_blank"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.superwyh.com/2010/12/12/用Racket计算行列式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Superwyh">
+      <meta itemprop="description" content="纯个人博客，什么都不代表。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Superwyh的无聊生活">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          用Racket计算行列式
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2010-12-12 08:22:47" itemprop="dateCreated datePublished" datetime="2010-12-12T08:22:47+08:00">2010-12-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-29 01:50:03" itemprop="dateModified" datetime="2024-01-29T01:50:03+08:00">2024-01-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>最基础的是拉普拉斯展开。</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">; 计算行列式</span></span><br><span class="line">(<span class="name">define</span> (<span class="name">determinant</span> matrix)</span><br><span class="line">  (<span class="name">define</span> (<span class="name">remove-row-col</span> m row col)</span><br><span class="line">    (<span class="name">for/list</span> ([r (<span class="name">in-range</span> (<span class="name">length</span> m))]</span><br><span class="line">               #<span class="symbol">:when</span> (<span class="name">not</span> (<span class="name">=</span> r row)))</span><br><span class="line">      (<span class="name">for/list</span> ([c (<span class="name">in-range</span> (<span class="name">length</span> (<span class="name">m</span> <span class="number">0</span>)))]</span><br><span class="line">                 #<span class="symbol">:when</span> (<span class="name">not</span> (<span class="name">=</span> c col)))</span><br><span class="line">        (<span class="name">list-ref</span> (<span class="name">list-ref</span> m r) c))))</span><br><span class="line"></span><br><span class="line">  (<span class="name">cond</span></span><br><span class="line">    [(<span class="name">=</span> (<span class="name">length</span> matrix) <span class="number">1</span>) (<span class="name">list-ref</span> (<span class="name">list-ref</span> matrix <span class="number">0</span>) <span class="number">0</span>)] <span class="comment">; 1x1 矩阵</span></span><br><span class="line">    [else</span><br><span class="line">     (<span class="name">for/sum</span> ([i (<span class="name">in-range</span> (<span class="name">length</span> matrix))])</span><br><span class="line">       (<span class="name">let</span> ([sign (<span class="name">if</span> (<span class="name">even</span>? i) <span class="number">1</span> <span class="number">-1</span>)])</span><br><span class="line">         (<span class="name">*</span> sign</span><br><span class="line">            (<span class="name">list-ref</span> (<span class="name">list-ref</span> matrix <span class="number">0</span>) i)</span><br><span class="line">            (<span class="name">determinant</span> (<span class="name">remove-row-col</span> matrix <span class="number">0</span> i)))))]))</span><br><span class="line"></span><br><span class="line">(<span class="name">define</span> example-matrix [[<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>] [<span class="number">0</span> <span class="number">1</span> <span class="number">4</span>] [<span class="number">5</span> <span class="number">6</span> <span class="number">0</span>]])</span><br><span class="line">(<span class="name">determinant</span> example-matrix) <span class="comment">; 应该返回 -1</span></span><br></pre></td></tr></table></figure>
+<p>但是这么写效率很差，可以使用高斯消元法。高斯消元法通过将矩阵转换为行最简形（或阶梯形），然后计算对角线元素的乘积来计算行列式。这种方法的复杂度远低于直接使用拉普拉斯展开。</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(<span class="name">define</span> (<span class="name">swap-rows</span> matrix row1 row2)</span><br><span class="line">  (<span class="name">let</span> ([temp (<span class="name">list-ref</span> matrix row1)])</span><br><span class="line">    (<span class="name">list-set</span> matrix row1 (<span class="name">list-ref</span> matrix row2))</span><br><span class="line">    (<span class="name">list-set</span> matrix row2 temp)))</span><br><span class="line"></span><br><span class="line">(<span class="name">define</span> (<span class="name">scale-row</span> matrix row factor)</span><br><span class="line">  (<span class="name">list-set</span> matrix row (<span class="name">map</span> (λ (<span class="name">x</span>) (<span class="name">*</span> x factor)) (<span class="name">list-ref</span> matrix row))))</span><br><span class="line"></span><br><span class="line">(<span class="name">define</span> (<span class="name">add-scaled-row</span> matrix src-row dest-row factor)</span><br><span class="line">  (<span class="name">list-set</span> matrix dest-row (<span class="name">map</span> (λ (<span class="name">x</span> y) (<span class="name">+</span> x (<span class="name">*</span> y factor))) </span><br><span class="line">                                 (<span class="name">list-ref</span> matrix dest-row) </span><br><span class="line">                                 (<span class="name">list-ref</span> matrix src-row))))</span><br><span class="line"></span><br><span class="line">(<span class="name">define</span> (<span class="name">gaussian-elimination</span> matrix)</span><br><span class="line">  (<span class="name">let</span> ([n (<span class="name">length</span> matrix)])</span><br><span class="line">    (<span class="name">for/fold</span> ([det <span class="number">1</span>]</span><br><span class="line">               [m matrix])</span><br><span class="line">              ([i (<span class="name">in-range</span> n)])</span><br><span class="line">      (<span class="name">match-let*</span> ([(<span class="name">pivot-row</span> (<span class="name">for/or</span> ([r (<span class="name">in-range</span> i n)]) </span><br><span class="line">                                     (<span class="name">when</span> (<span class="name">not</span> (<span class="name">zero</span>? (<span class="name">list-ref</span> (<span class="name">list-ref</span> m r) i)))</span><br><span class="line">                                       r)))</span><br><span class="line">                   (<span class="name">pivot</span> (<span class="name">list-ref</span> (<span class="name">list-ref</span> m pivot-row) i))]</span><br><span class="line">        (<span class="name">unless</span> pivot-row (<span class="name">return</span> (<span class="name">values</span> <span class="number">0</span> m)))</span><br><span class="line">        (<span class="name">when</span> (<span class="name">not</span> (<span class="name">=</span> pivot-row i))</span><br><span class="line">          (<span class="name">set!</span> det (<span class="name">-</span> det))</span><br><span class="line">          (<span class="name">set!</span> m (<span class="name">swap-rows</span> m i pivot-row)))</span><br><span class="line">        (<span class="name">set!</span> m (<span class="name">scale-row</span> m i (<span class="name">/</span> <span class="number">1</span> pivot)))</span><br><span class="line">        (<span class="name">for</span> ([j (<span class="name">in-range</span> (<span class="name">+</span> i <span class="number">1</span>) n)])</span><br><span class="line">          (<span class="name">set!</span> m (<span class="name">add-scaled-row</span> m i j (<span class="name">-</span> (<span class="name">list-ref</span> (<span class="name">list-ref</span> m j) i)))))</span><br><span class="line">        (<span class="name">values</span> (<span class="name">*</span> det pivot) m)))))</span><br><span class="line"></span><br><span class="line">(<span class="name">define</span> (<span class="name">determinant</span> matrix)</span><br><span class="line">  (<span class="name">let-values</span> ([(<span class="name">det</span> _) (<span class="name">gaussian-elimination</span> matrix)])</span><br><span class="line">    det))</span><br><span class="line"></span><br><span class="line">(<span class="name">define</span> example-matrix [[<span class="number">1</span> <span class="number">2</span> <span class="number">3</span>] [<span class="number">0</span> <span class="number">1</span> <span class="number">4</span>] [<span class="number">5</span> <span class="number">6</span> <span class="number">0</span>]])</span><br><span class="line">(<span class="name">determinant</span> example-matrix) <span class="comment">; 应该返回 -1</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Racket/" rel="tag"># Racket</a>
+              <a href="/tags/函数式编程/" rel="tag"># 函数式编程</a>
+              <a href="/tags/行列式/" rel="tag"># 行列式</a>
+              <a href="/tags/线性代数/" rel="tag"># 线性代数</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2010/11/29/Racket的计算器程序/" rel="prev" title="Racket的计算器程序">
+      <i class="fa fa-chevron-left"></i> Racket的计算器程序
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2010/12/14/用Racket计算泰勒级数展开/" rel="next" title="用Racket计算泰勒级数展开">
+      用Racket计算泰勒级数展开 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Superwyh</p>
+  <div class="site-description" itemprop="description">纯个人博客，什么都不代表。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">114</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">181</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Superwyh</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">226k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:25</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
