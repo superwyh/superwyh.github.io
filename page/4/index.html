@@ -180,6 +180,199 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.superwyh.com/2019/01/29/Unity3D学习笔记-Unity常用原生函数的执行顺序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Superwyh">
+      <meta itemprop="description" content="纯个人博客，什么都不代表。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Superwyh的无聊生活">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/01/29/Unity3D学习笔记-Unity常用原生函数的执行顺序/" class="post-title-link" itemprop="url">Unity3D学习笔记 - Unity常用原生函数的执行顺序</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-01-29 02:10:38 / 修改时间：02:51:31" itemprop="dateCreated datePublished" datetime="2019-01-29T02:10:38+08:00">2019-01-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>639</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>现阶段对于我来说最常用的是Start()，OnEnable()和OnDisable()。</p>
+<p>OnEnable()的优先级高于Start()，每次Enable的时候OnEnable()都会加载，而Start()只会加载一次。</p>
+<p>OnDisable()只有在Disable一个Component的时候才会加载。</p>
+<p>很容易测试一下：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Start</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Debug.Log(<span class="string">"Start"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnEnable</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Debug.Log(<span class="string">"OnEnable"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnDisable</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Debug.Log(<span class="string">"OnDisable"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>直接运行后显示：</p>
+<p><img src="http://img.superwyh.com/1548667686456.png" alt="1548667686456"></p>
+<p>在GameObject 里面Disable这个Component以后会显示：</p>
+<p><img src="http://img.superwyh.com/1548667787559.png" alt="1548667787559"></p>
+<p><img src="http://img.superwyh.com/1548667803245.png" alt="1548667803245"></p>
+<p>再次Enable以后，加上之前的，完整的Console信息是：</p>
+<p><img src="http://img.superwyh.com/1548667860208.png" alt="1548667860208"></p>
+<p><a href="https://docs.unity3d.com/Manual/ExecutionOrder.html" target="_blank" rel="noopener">Unity官方文档</a>里也有一张详细的图表说明原生函数的顺序：</p>
+<p><img src="http://img.superwyh.com/monobehaviour_flowchart.svg" alt></p>
+<p>这里比较有用的一点是Awake()要比OnEnable()执行的优先级靠前，但是Awake()和Start()一样都是只执行一次。</p>
+<p>Awake()的优先级最高是因为，它是当一个GameObject Active以后就会立刻执行，而其他的都是在Component Enable以后执行。</p>
+<p>强调一下：Active和Enable的区别在于，Active是针对GameObject的，Enable是针对Component的：</p>
+<p><img src="http://img.superwyh.com/1548700183636.png" alt="1548700183636"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://blog.superwyh.com/2019/01/27/有关裁员那些事/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Superwyh">
+      <meta itemprop="description" content="纯个人博客，什么都不代表。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Superwyh的无聊生活">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/01/27/有关裁员那些事/" class="post-title-link" itemprop="url">有关裁员那些事</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-01-27 18:03:17 / 修改时间：18:05:10" itemprop="dateCreated datePublished" datetime="2019-01-27T18:03:17+08:00">2019-01-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/创业/" itemprop="url" rel="index">
+                    <span itemprop="name">创业</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+              <span>1.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>我朋友的动画公司刚裁员尘埃落定，昨天半夜和他聊了很多关于裁员的事情，这里总结一下。</p>
+<p>很多人不理解，创业公司裁员本质上是一场赌博。</p>
+<p>大部分创业公司一轮融资支撑的时间是6到18个月，一年上下的是最多的，所以一般会在上一轮融资到账之后一年左右的时间去找下一轮融资，这个时间还要根据自己公司的盈利能力做调整，也有很多公司能够通过一轮融资直接实现了全面盈利，或者一轮融资支撑三五年的也有，这类公司融资一般都是为了扩大生产规模，但是2018年市场环境非常糟糕，多数公司融资都是为了渡过难关。</p>
+<p>总是有一大批公司都是选择了在公司资产见底前去做一轮融资，现在这个时间节点一般融资都是赶场式的，创始人会在一到两个月的时间里疯狂的见投资人，普遍会见到100到200个，甚至300个以上的也有，然后跟背课文一样跟所有投资人去讲故事，然后其中有些投资人会表达他们的投资意向，之后会给你一个投资意向书，里面有他们能够提供的主要条款。</p>
+<p>但很多人第一次创业，尤其是在没有找FA的情况下会被这些投资意向书坑，因为投资意向只是意向，没有任何法律效应，只是代表了你在他们的考虑名单里，很多大的投资机构发20份意向出去可能一家最后都不会投。所以投资意向什么都不代表，哪怕你拿到了，你还要去继续的游说其他资方，尤其是在2018年这个资金特别匮乏的年份。</p>
+<p>如果你签了投资意向书以后，会有资方的人过来你公司做尽职调查，基本上就是核实你公司的实际情况和你当初说的有没有出入，把你公司的材料翻个底掉，之后投资公司会拿着这份材料再上一次投委会，决定是不是要最终投资你，如果确定要投资了，就签署一份正式的SPA，之后等钱到账就好。当然如果你拿的是美元投资，手续还要比较复杂。</p>
+<p>我其实上面说这些只有一个意思，就是在你钱到账那一刻前，所有事情都是不确定的，这个不确定性其实是拖垮不少创业公司的主要原因，有很多情况下都不是公司的业务有什么问题，是真的这种钱的不确定导致了创业者拿不准公司下一步的时间点。</p>
+<p>于是，很多创业公司都会面临一个问题，几个月的时间公司的现金流就见底，在这种情况下是继续维持现有规模，还是裁员延长公司现金流支撑的时间？</p>
+<p>所以在这几个月的时间里，所有创始人都会面对一场赌局，如果立刻裁员，那么可以延长公司的，但是也有可能彻底因为裁员过多影响公司运作状况，如果不裁员很大可能性会在肉眼可见的时间里破产。</p>
+<p>在这种情况下，有的公司的前一轮资方会帮你渡过难关，借钱给你，但是某些情况下会要求以你个人名义担保，也就是你如果公司破产了，要以个人名义还这笔钱，因为这不是一笔小钱，所以对于很多人来说可能是根本还不起的，很多创业者会突然负债就是因为这点。</p>
+<p>还有一些资方会直接建议你裁员，甚至是强制要求你裁员。</p>
+<p>裁员又涉及到了对于员工的补偿，在我见过的案例里，至少有60%的情况是创始人想给员工N+1的补偿，但是反对的是资方。因为对于已经裁员的公司来说，这笔补偿是能够决定公司能不能活下去的重要筹码，补偿相当于把这个筹码让了出去。而且现实是大部分员工出于情感上的问题，都是不会去走仲裁的，只有极少极少的员工去走仲裁渠道，而且一般也很难有什么结果，因为哪怕仲裁结果下来了，公司一般也赔不起，甚至仲裁结果还没下来，公司已经破产了。</p>
+<p>所以现阶段大批互联网公司裁员背后真正的情况是，2019年很可能会跟着一大批公司破产。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://blog.superwyh.com/2019/01/27/《英雄联盟》最早是怎么火起来的/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1039,215 +1232,6 @@
   
   
 
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.superwyh.com/2018/11/26/中国游戏行业为什么都是抄抄抄？/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Superwyh">
-      <meta itemprop="description" content="纯个人博客，什么都不代表。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Superwyh的无聊生活">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/11/26/中国游戏行业为什么都是抄抄抄？/" class="post-title-link" itemprop="url">中国游戏行业为什么都是抄抄抄？</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-11-26 21:41:35" itemprop="dateCreated datePublished" datetime="2018-11-26T21:41:35+08:00">2018-11-26</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2018-11-28 21:42:28" itemprop="dateModified" datetime="2018-11-28T21:42:28+08:00">2018-11-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/评论/" itemprop="url" rel="index">
-                    <span itemprop="name">评论</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              <span>2.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>其实这个问题如果追本溯源的话，一是国内对风险承受能力太低，二是在单机游戏时代没有建立起来一个健康的游戏付费模型；三是国内玩家对抄袭这件事没那么在意。</p>
-<p>这个风险有很多个层面的，首先是开发上的。</p>
-<p>我是个码农出身。2011年的时候做过HTML5的游戏，如果有印象的应该还记得当时HTML5的好多标签还没有，更没有现在这些轮子，写游戏真的是平地起高楼的写法，先写个引擎出来，然后一点一点把游戏搞出来。我刚开始高估了当时的开发环境了，等到开始写demo的时候就发现大量的交互是完全无法实现的，甚至连按键音这么一个小功能都做不到，当时年轻气盛，还硬写了很久，直到有一天早上起吃早饭的时候突然觉得太傻逼了，就放弃了，浪费了很多我自己的时间，也浪费了团队其他人的时间和资方的金钱。我估计要完成当年我需要的功能，至少要三年以后才有足够的轮子。</p>
-<p>这其实就是为什么很多技术非常排斥策划那边的所谓创新，因为增加的开发难度可能是数量级的，现在平台游戏是这个样子很重要的一个愿意就是在开发效率和开发难度这件事上有一个比较好的平衡点，团队里都不会有太大的问题。</p>
-<p>其实很多非从业者可能不知道，大概每1000款游戏，有至少一半是根本完成不了开发的，能完成开发的至少有一半又是满是bug根本没法玩的，其中再有至少一半是整体制作水平低于这个时代的，最后你算一下有多少游戏能够算真的上线被玩家看到？这可能已经是最好的估计了。</p>
-<p>这个事情背后又牵扯到了两件事，一是游戏策划的问题；二是中国非常特殊的游戏运作模式的问题。</p>
-<p>策划的问题其实非常简单，很多策划入职游戏公司以后会发现都在疯狂的互相借鉴，你要加一些创新的功能根本加不进去，因为你没有办法说服制作人或者老板这个功能是有意义的。</p>
-<p>这里又涉及到两个问题，一是大多数，我指的是95%以上，很可能更高的比例的游戏策划的那些所谓点子都是垃圾点子，其中大多数都是被市场证明了不可行的，只是你自己不知道而已；二是你的这些创新点子可能会卡住整个产品的进度，就像面前面说的，为了加一个小功能，增加大量的开发时间，这点老板肯定是不能接受的，至于你说你要做一款完全创新模式的游戏，那你首先要证明你的能力是不是？你创新带来的风险是老板承受不了的，毕竟不需要你花钱。</p>
-<p>其实要是多看看欧美和日韩的游戏会发现，在核心玩法上几乎所有游戏公司都是在互相借鉴，大家尽可能都只是做微创新，这点全世界都是极为相似的。尤其是这两年大逃杀类游戏火了以后，所有游戏公司都开始尝试在自己的游戏里加入类似的机制。还有一个趋势我觉得非常糟糕，在大逃杀类游戏出来了一堆模仿者以后，大家不是嘲笑这些人模仿，而是在嘲笑那些模仿的慢的人，这个话题就不在这里多说了。</p>
-<p>而之所以老板不能接受很多游戏内的小创新就是因为中国游戏行业非常特殊的运作模式。</p>
-<p>首先要明白，因为大家众所周知的盗版原因，导致了中国是没有单机游戏市场的，这部分市场的缺失直接问题就是中国必须摸索出来一套自己的盈利模式，而且必须是和卖拷贝无关的。这点真的感谢网络游戏，尤其是“免费游戏”这个模式的出现，否则现在中国的游戏市场根本轮不到你们吐槽抄袭。</p>
-<p>当然这种模式就导致了中国游戏呈现出来了明显的重度游戏市场，从PC网络游戏到网页游戏和手机游戏一路下来都是如此。大概11年以后这个趋势就不可改变了，最早还有人觉得手机游戏是休闲游戏的天下，开始确实是的，但是现在再看真的赚钱的还都是重度游戏。</p>
-<p>重度游戏导致了整个市场的马太效应非常严重，一方面是重度游戏吞噬了玩家主要的时间和支付能力，每个玩家同一时间可以玩和可以花钱的游戏是十分有限的；另外一方面也是因为重度游戏收益高，所以不同公司之间不是竞争资源，更像是互相掠夺资源，造成了没有能力抢夺资源的公司什么都得不到。</p>
-<p>这种马太效应和资源掠夺模式的背景下，整个市场出现了非常明显的两件事，一是资源的价值被放大了，甚至是整个中国游戏市场就是资源导向的，尤其对于手机游戏和网页游戏这种曝光渠道和资源本来就少的平台，你只要资源好总归是可以赚钱的，游戏本身对相当多的游戏公司来说没有那么看重；二是给一款游戏的容错空间越来越小，开发上不犯错是最重要的，更重要的是必须保证一个稳定的付费收益，否则有可能盈利模型就出问题了，很有可能怎么做怎么赔，之后就拼运气和资源，所以现有已经证明相对稳定的付费模型大家也不愿意去变动。这也是为什么涉及到调整付费方式这件事上几乎所有中国游戏公司都非常排斥。</p>
-<p>当然也有人会说中国的游戏公司老板太注重利益了，但是全世界游戏公司的老板肯定都注重利益，说当老板不是为了赚钱的分分钟被董事会开掉。只是中国的特殊消费模式导致了，中国老板注重利益的同时会忽略游戏本身，因为游戏本身在赚钱这件事上的重要度没那么高。除此以外还有非常重要的一件事。</p>
-<p>之所以中国老板这么看重盈利，甚至远超公司的口碑，除了本身中国游戏就是资源导向的以外，又涉及到了中国的风险投资模式，一是人民币基金是5年或者5+2的基金，也就是你在这个时间里必须要给投资人一个交代，而美元基金很多是10年起的，甚至有没有赎回期的常青树基金，也就是不会有投资人催着你疯狂变现，而中国有相当一批的游戏公司还是拿着行业外人的钱，比如煤老板的钱，这些老板连赎回期都不管，一天到晚催着你赚钱；二是中国在过去的十几年时间里可以赚钱的地方实在太多了，你做游戏的要是没有办法证明能够快速变现，就根本拿不到钱。</p>
-<p>美国的游戏产业发达和风险投资行业健康是正相关的，但是也要注意到一件事，最近七八年的时间能够明显发现美国的中等体量的游戏在明显减少，这背后主要的原因就是游戏开发的成本越来越高，大公司选择了直接做最顶级投资的3A游戏，小公司就干脆做小游戏了，中等体量的游戏就非常尴尬，如果熟悉好莱坞的话会发现电影市场也有这个情况发生。之所以强调这件事是因为同样的问题也在中国市场出现，游戏的整体开发成本再激增，导致了一个阶段内游戏公司更不敢创新，因为错不起，只要现有的模式还能行得通就继续做。当然我也认为在游戏开发成本和渠道的成本高到某个程度以后，会有国内游戏公司开始尝试大刀阔斧的创新，反正都是买彩票，不如赌一把大的，其实最近一年这个趋势非常明显了，有游戏公司开始尝试在Steam上做一些非常有意思的游戏，同质化的手机游戏和网页游戏也越来越少。原创化肯定是一个长期的趋势。</p>
-<p>如果去看一遍上面的所有经过会发现，其实大部分过程都是无可奈何下最好的选择，所以我更倾向于是中国游戏产业过程里的一个必经过程。美国和日本游戏市场也都经历过类似的时间点，只不过中国晚了很多年而已，毕竟中国没有过成熟的单机游戏市场时代，你们现在看的那些成熟的市场都是在试错里面试出来的。</p>
-<p>除此以外还有我开头提到的最后一点，国内玩家对抄袭这件事近乎于冷漠到令人发指，如果看过一些游戏公司和玩家沟通用的群会发现一件很有意思的事情，玩家经常会建议游戏公司抄一下别的公司的某个项目或者产品功能，在这种情况下怎么可能有公司自己反思抄袭这件事。</p>
-<p>所以我一直觉得大家不要去骂中国的游戏产业，现在能赚到钱就说明就是这么个市场，而且是世界上最大的市场之一，更说明了现在这些公司都没做错。</p>
-<p>当然挺讨厌的。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.superwyh.com/2018/11/25/关于斯坦李/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Superwyh">
-      <meta itemprop="description" content="纯个人博客，什么都不代表。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Superwyh的无聊生活">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/11/25/关于斯坦李/" class="post-title-link" itemprop="url">关于斯坦李</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2018-11-25 21:33:44" itemprop="dateCreated datePublished" datetime="2018-11-25T21:33:44+08:00">2018-11-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2018-11-28 21:35:26" itemprop="dateModified" datetime="2018-11-28T21:35:26+08:00">2018-11-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/评论/" itemprop="url" rel="index">
-                    <span itemprop="name">评论</span>
-                  </a>
-                </span>
-            </span>
-
-          
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>我特地避开了最热闹的时候发这篇文章。</p>
-<p>斯坦李去世的时候有好几家媒体问过我写文章，我都说算了，主要是没什么可写的，他老爷子的生平满世界都是写起来也挺没意思的，但确实还是有件小事想写一下。</p>
-<p>你如果了解美漫圈子的话会发现对斯坦李的评价特别的两极分化。</p>
-<p>一方面有很多的核心粉丝，另外一方面黑子同样多。粉丝我就不说了，毕竟是绝大多数，我说一下为什么有黑子。</p>
-<p>首先是早期斯坦李在漫威期间确实有黑点，最出名的就是有大量跟别人合作的角色最后创作者只留自己的名字，还有不少是画师先创作了某个形象，他作为编剧参与以后也算作自己是创作者。这是斯坦李最被人诟病的一点，也就是现在罗列的那些所谓斯坦李创造的角色有一部分其实应该并不应该署名给他。</p>
-<p>这种做法让他和一批创作者分道扬镳，加上在漫威时期多少也做了一些明显能看出来为了个人利益的行为，让相当一批老一代创作者对他颇有微词。但无论如何大家都不否认他对美国漫画行业的贡献，甚至很多贡献并不被国内粉丝所熟知，比如美国漫画行业在上世纪有过很长的一段灰色审查期，造成了整个美国漫画行业近乎崩盘，斯坦李就是当时带头站出来直接挑战制度拯救了漫画产业的人，美国漫画产业最近半个世纪以来几乎所有的正面运动都和斯坦李相关。</p>
-<p>最近这些年对于斯坦李的主要争议集中在创建Pow！以后，当时斯坦李找到了两个赢利点，一个是卖自己的，去漫展签名合影收钱，还在出自己形象的漫画封面和玩具，这一点无可厚非，争议最大的是后一点，就是在这个期间靠着自己的名字硬推了大量品质非常烂的项目。</p>
-<p>每年Pow！都会自己制作，或者跟别人的公司挂名合作一些项目，有不少项目都是摆明着就是为了骗钱，都是打着斯坦李的名字去找投资，最早还能在美国融到钱，这些年美国已经彻底没人鸟他以后就开始到别的国家找钱，如果有印象的应该还记得这些年有过好几部日本、印度和中国背景的号称斯坦李制作的超级英雄电影出来。</p>
-<p>我经手过斯坦李的一个动画和一个电影项目，说实话这两个项目差到根本不好意思拿出去给人看，实在太烂了，那个动画项目跟国内二线动画公司的项目一个水准，放在美国根本没人鸟，所以才联系我们想要在中国市场融资，在中国给资方看了以后都以为我们是拿着一个国内公司的项目在骗人。</p>
-<p>事实上在美国的漫画业内，对外看起来对斯坦李的态度都很好，其实私下聊天的时候对他评价要么功过两开要么评价很糟糕，对他的态度很像是对一个暴君，敬畏但是不喜欢，更多的也是源自于后期的这些摆明了骗钱的项目。在中国反而对斯坦李的评价要正面的多。</p>
-<p>未来会有一批打着斯坦李遗作的项目出来，我已经听说有公司往这个方向运作了，而且不出意外最近就有物料出来。我写这篇文章的主要目的就是提个醒，时候不要看到一群人感动的不行要去看，因为现在在做的这些项目都是纯粹骗钱的。</p>
-<p>我相信那些所谓的粉丝看了以后也会转身就开骂。</p>
-<p>何苦呢，就不要去看了。</p>
-<p>是吧。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
   </div>
 
   
@@ -1318,7 +1302,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-count">117</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1365,12 +1349,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">227k</span>
+    <span title="站点总字数">228k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:26</span>
+    <span title="站点阅读时长">3:27</span>
 </div>
 
         
